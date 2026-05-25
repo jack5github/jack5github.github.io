@@ -1,0 +1,7 @@
+---
+import Html from './html.astro';
+const { frontmatter } = Astro.props;
+---
+<Html title={frontmatter.title}>
+	<slot/>
+</Html>

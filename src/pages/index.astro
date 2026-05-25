@@ -1,17 +1,16 @@
 ---
-
+import Body from '../components/html.astro';
+const pages = import.meta.glob('./**/*.{astro,md}');
+const urls = Object.keys(pages);
+for (let i = 0; i < urls.length; i++) {
+	urls[i] = urls[i].replace('./', '').replace('.astro', '').replace('.md', '');
+}
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Body title="Home Page">
+	<h1>Home Page</h1>
+	<ul>{ urls.map((url) => (
+		<li>
+			<a href={url}>{url}</a>
+		</li>
+	)) }</ul>
+</Body>
