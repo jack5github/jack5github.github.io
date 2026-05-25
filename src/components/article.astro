@@ -3,5 +3,10 @@ import Html from './html.astro';
 const { frontmatter } = Astro.props;
 ---
 <Html title={frontmatter.title}>
+	{
+		frontmatter.hero !== undefined && (
+			<img src={frontmatter.hero} alt={frontmatter.title}/>
+		)
+	}
 	<slot/>
 </Html>

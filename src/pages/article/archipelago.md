@@ -4,10 +4,11 @@ title: Archipelago
 ---
 # Archipelago
 
-[Archipelago](https://archipelago.gg/) is a Cross-Game Modification System designed to combine and randomize multiple games together to create one huge multi-world. All items from every world are placed into an itempool, these items are then scattered to other games  Every game must work together to beat eachothers goals. 
+[Archipelago](https://archipelago.gg/) is a cross-game randomiser designed to combine multiple games together to create one huge multi-world. All items from each world are placed into a single item pool, which is then scattered amongst every game in the multi-world. All games must work together to beat each-others' goals.
 
-For example if someone is playing Ocarina of Time they find a Item/Check for another game let's use Ratchet and Clank 3 as an example; They find an Infobot for Planet Aridia. Then if Ratchet and Clank 3's player finds an Item/Check for Ocarina of Time such as the bomb bag it gets sent to them.
+For example, in a multi-world consisting of two games (e.g., *The Legend of Zelda: Ocarina of Time* and *Ratchet & Clank: Up Your Arsenal*), players of both games can find items both from their own game as well as items from the other.
 
+<!-- TODO: Rework all of the below -->
 ## How does Archipelago work?
 
 Archipelago uses `.apworld` files for every game outside of the website. (Stable games on the website are built into the Archipelago program) You can find these `.apworld`s on their [Discord](https://discord.gg/8Z65BR2) server via the future-game-design post channel or just exploring [Github](https://github.com/).

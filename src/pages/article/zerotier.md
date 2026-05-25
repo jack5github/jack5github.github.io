@@ -6,7 +6,7 @@ title: ZeroTier
 
 ZeroTier is a piece of software that connects computers together over the internet, assigning them IP addresses that allow them to communicate with each other as if they were on the same network. It is far safer than [LogMeIn Hamachi](https://en.wikipedia.org/wiki/LogMeIn_Hamachi), and works on multiple operating systems unlike [Radmin VPN](https://www.radmin-vpn.com/).
 
-This connection makes it possible to play video games that only support LAN multiplayer. Historic examples include [Minecraft](https://minecraft.wiki/), [multiplayer Source Engine mods](https://developer.valvesoftware.com/wiki/Category:Source_mods), [OpenRCT2](https://openrct2.io/) and more.
+This connection makes it possible to play video games that only support multiplayer via LAN or port forwarding. Historic examples include [Minecraft](https://minecraft.wiki/), [multiplayer Source Engine mods](https://developer.valvesoftware.com/wiki/Category:Source_mods), [OpenRCT2](https://openrct2.io/) and more.
 
 ## Windows Setup
 

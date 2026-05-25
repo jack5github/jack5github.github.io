@@ -1,0 +1,40 @@
+body {
+	background-color: #808080;
+	font-family: sans-serif;
+	font-size: 1.12em;
+	margin: 0;
+}
+div#column {
+	background-color: #fcfcfc;
+	/* Center horizontally */
+	margin: auto;
+	/* Stretch to fit screen height */
+	min-height: 100vh;
+	max-width: 860px;
+}
+/* Remove underline from container links */
+a:has(div) {
+	text-decoration: none;
+}
+div#header {
+	background-color: #ff4200;
+	padding: 20px;
+}
+div#header > h1 {
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+div#content {
+	padding: 20px;
+}
+div > :first-child {
+	margin-top: 0px;
+}
+div > :last-child {
+	margin-bottom: 0px;
+}
+img {
+	/* Images are not allowed to exceed the width of their containers */
+	max-width: 100%;
+}
