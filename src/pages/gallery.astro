@@ -3,9 +3,7 @@ import Content from '../components/content.astro';
 import Html from '../components/html.astro';
 
 const urls: string[] = [
-	'/images/authors/jack5.webp',
-	'/images/authors/zeroman95.webp',
-	'/images/cutouts/karl.webp',
+	'/images/heroes/gmod.webp',
 	'/images/heroes/srb2k.webp',
 ];
 const urlCount = urls.length;
@@ -32,7 +30,6 @@ const urlCount = urls.length;
 		/**
 		 * Change the currently displayed image when the user presses the left or right arrow key or clicks an arrow button.
 		 */
-		const gallery = document.getElementById('gallery');
 		const galleryImages = document.getElementById('gallery-images');
 		const imageCount = galleryImages.getAttribute('data-count');
 		document.addEventListener('keydown', (event) => {
@@ -115,6 +112,7 @@ const urlCount = urls.length;
 			display: flex;
 			/* Left offset is dynamically changed by JavaScript */
 			left: 0px;
+			height: 100%;
 			transition: left 0.35s ease-out;
 			/* Full width for each image */
 			width: calc(var(--urlCount) * 100%);

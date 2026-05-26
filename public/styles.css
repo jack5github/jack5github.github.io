@@ -85,12 +85,19 @@ ul,
 ol {
 	padding-inline-start: 30px;
 }
-code {
+:not(pre) > code,
+pre {
 	background-color: var(--colour-code-bg);
 	border: 1px solid var(--colour-code-border);
 	border-radius: 6px;
+}
+:not(pre) > code {
 	color: var(--colour-code-text);
 	padding: 0px 3px 1px 3px;
+}
+pre {
+	padding: 6px 8px 6px 8px;
+	white-space: pre-wrap;
 }
 table,
 th,
