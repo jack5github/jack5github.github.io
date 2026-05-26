@@ -6,6 +6,9 @@
 	--colour-link-text: #ff490a;
 	--colour-column: #fcfcfc;
 	--colour-text: #111;
+	--colour-code-bg: #0a1414;
+	--colour-code-border: #070e0e;
+	--colour-code-text: #eeee99;
 }
 body {
 	background-color: var(--colour-page);
@@ -16,6 +19,7 @@ body {
 }
 /* # Preferences panel styles */
 div#panel {
+	background-color: var(--colour-page);
 	height: 100vh;
 	/* Prevent content from showing when panel is closed */
 	overflow-x: hidden;
@@ -76,6 +80,13 @@ div > :last-child {
 }
 a {
 	color: var(--colour-link-text);
+}
+code {
+	background-color: var(--colour-code-bg);
+	border: 1px solid var(--colour-code-border);
+	border-radius: 6px;
+	color: var(--colour-code-text);
+	padding: 0px 3px 1px 3px;
 }
 table,
 th,
