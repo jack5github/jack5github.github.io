@@ -1,27 +1,56 @@
 ---
 import Author from './author.astro';
+import Content from './content.astro';
 import Html from './html.astro';
 
 const { frontmatter } = Astro.props;
 ---
 <Html title={frontmatter.title}>
 	{ frontmatter.hero !== undefined && (
-		<img src={frontmatter.hero} alt={frontmatter.title}/>
+		<a href={frontmatter.hero} target="_blank"><div id="hero">
+			<img src={frontmatter.hero}/>
+		</div></a>
+		<script>
+			/**
+			 * Animate hero image on mouse hover. Allows user to zoom into whatever they are hovering over.
+			 */
+			let hero = document.getElementById('hero');
+			const heroImg = hero.querySelector('img');
+			document.addEventListener('mousemove', (event) => {
+				let mouseX = event.clientX;
+				let mouseY = event.clientY;
+				let heroImgX = heroImg.offsetLeft;
+				let heroImgY = heroImg.offsetTop;
+				let x = mouseX - heroImgX;
+				let y = mouseY - heroImgY;
+				if (x < 0) {
+					x = 0;
+				} else if (x > heroImg.width) {
+					x = heroImg.width;
+				}
+				if (y < 0) {
+					y = 0;
+				} else if (y > heroImg.height) {
+					y = heroImg.height;
+				}
+				heroImg.style["transform-origin"] = `${x}px ${y}px`;
+			});
+		</script>
 	) }
-	<h1>{frontmatter.title}</h1>
-	{ frontmatter.link !== undefined && (
-		<p><a href={frontmatter.link.url}>{frontmatter.link.text || frontmatter.link.url}</a></p>
-	)}
-	{ frontmatter.cutout !== undefined && (
-		<img
-			src={frontmatter.cutout}
-			style="float: right; max-width: 192px;"
-		/>
-	) }
-	<slot/>
-	{
-		frontmatter.author !== undefined && (
-			<Author name={frontmatter.author} coauthors={frontmatter.coauthors}/>
-		)
-	}
+	<Content>
+		<h1>{frontmatter.title}</h1>
+		{ frontmatter.link !== undefined && (
+			<p><a href={frontmatter.link.url}>{frontmatter.link.text || frontmatter.link.url}</a></p>
+		) }
+		{ frontmatter.cutout !== undefined && (
+			<img
+				src={frontmatter.cutout}
+				style="float: right; max-width: 192px;"
+			/>
+		) }
+		<slot/>
+		{ frontmatter.author !== undefined && (
+				<Author name={frontmatter.author} coauthors={frontmatter.coauthors}/>
+		) }
+	</Content>
 </Html>

@@ -1,30 +1,68 @@
+/* # Global styles */
+:root {
+	--colour-page: #808080;
+	--colour-accent-bg: #ff4200;
+	--colour-accent-text: #fff;
+	--colour-link-text: #ff490a;
+	--colour-column: #fcfcfc;
+	--colour-text: #111;
+}
 body {
-	background-color: #808080;
+	background-color: var(--colour-page);
+	color: var(--colour-text);
 	font-family: sans-serif;
 	font-size: 1.12em;
 	margin: 0;
 }
+/* # Preferences panel styles */
+div#panel {
+	height: 100vh;
+	/* Prevent content from showing when panel is closed */
+	overflow-x: hidden;
+	/* Position panel at far right of screen */
+	position: fixed;
+	right: 0px;
+	text-align: right;
+	/* Width is dynamically changed by JavaScript */
+	width: 0px;
+}
+/* # Primary column styles */
 div#column {
-	background-color: #fcfcfc;
+	background-color: var(--colour-column);
 	/* Center horizontally */
 	margin: auto;
 	/* Stretch to fit screen height */
 	min-height: 100vh;
-	max-width: 860px;
+	max-width: 820px;
 }
 /* Remove underline from container links */
 a:has(div) {
 	text-decoration: none;
 }
 div#header {
-	background-color: #ff4200;
+	background-color: var(--colour-accent-bg);
 	padding: 20px;
 }
 div#header > h1 {
-	color: #fff;
+	color: var(--colour-accent-text);
 	text-align: center;
 	text-decoration: none;
 }
+img {
+	/* Images are not allowed to exceed the width of their containers */
+	max-width: 100%;
+}
+/* # Hero image styles */
+div#hero {
+	overflow: hidden;
+}
+div#hero img {
+	transition: transform 0.325s ease;
+}
+div#hero:hover img {
+	transform: scale(1.4);
+}
+/* # Content styles */
 div#content {
 	padding: 20px;
 }
@@ -34,14 +72,13 @@ div > :first-child {
 div > :last-child {
 	margin-bottom: 0px;
 }
-img {
-	/* Images are not allowed to exceed the width of their containers */
-	max-width: 100%;
+a {
+	color: var(--colour-link-text);
 }
 table,
 th,
 td {
-	border: 1px solid black;
+	border: 1px solid var(--colour-text);
 	border-collapse: collapse;
 }
 th,
@@ -49,4 +86,29 @@ td {
 	font-size: 0.85em;
 	padding: 6px;
 	text-align: left;
+}
+/* # Preference styles */
+/* ## Dark mode */
+.dark {
+	color-scheme: dark;
+	--colour-page: #111111;
+	--colour-column: #333333;
+	--colour-text: #fcfcfc;
+}
+/* ## Skins */
+.skin-ir {
+	--colour-accent-bg: #000077;
+	--colour-accent-text: #eeee99;
+	--colour-link-text: #000077;
+}
+.skin-ir.dark {
+	--colour-link-text: #eeee99;
+}
+.skin-race {
+	--colour-page: #fff;
+	--colour-accent-bg: #ff0000;
+	--colour-link-text: #ff0000;
+}
+.skin-race.dark {
+	--colour-page: #000;
 }
