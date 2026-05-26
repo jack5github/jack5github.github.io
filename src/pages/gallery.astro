@@ -12,25 +12,25 @@ const urlCount = urls.length;
 ---
 <Html title="Gallery">
 	<div id="gallery">
-		<!--
-		TODO: Add gallery overlay
 		<div id="gallery-overlay">
 			<div id="gallery-overlay-arrows">
-				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-left">◀</div>
-				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-right">▶</div>
+				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-left"><span>◀</span></div>
+				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-right"><span>▶</span></div>
 			</div>
+			<!--
+			TODO: Add gallery overlay grid
 			<div id="gallery-overlay-grid">{ urls.map((url) => (
 				<div><img src={url}/></div>
 			)) }</div></div>
+			-->
 		</div>
-		-->
 		<div id="gallery-images" data-count={urlCount}>{ urls.map((url) => (
-			<div><img src={url}/></div>
+			<div><a href={url} target="_blank"><img src={url}/></a></div>
 		)) }</div>
 	</div>
 	<script>
 		/**
-		 * Change currently displayed image when user presses left or right arrow keys.
+		 * Change the currently displayed image when the user presses the left or right arrow key or clicks an arrow button.
 		 */
 		const gallery = document.getElementById('gallery');
 		const galleryImages = document.getElementById('gallery-images');
@@ -53,6 +53,14 @@ const urlCount = urls.length;
 			}
 			galleryImages.style.left = `${left}px`;
 		});
+		const arrowLeft = document.getElementById('gallery-overlay-arrow-left');
+		arrowLeft.addEventListener('click', () => {
+			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }));
+		});
+		const arrowRight = document.getElementById('gallery-overlay-arrow-right');
+		arrowRight.addEventListener('click', () => {
+			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }));
+		})
 	</script>
 	<style define:vars={{ urlCount }}>
 		div#gallery {
@@ -67,6 +75,39 @@ const urlCount = urls.length;
 			/* Position relative to parent */
 			position: absolute;
 			top: 0px;
+		}
+		div#gallery-overlay {
+			color: var(--colour-column);
+			height: 100%;
+			/* Disable empty areas capturing mouse input */
+			pointer-events: none;
+			width: 100%;
+			/* Put on top of images */
+			z-index: 1;
+		}
+		div#gallery-overlay-arrows {
+			display: flex;
+			height: 100%;
+			/* Push arrows to left and right sides of container */
+			justify-content: space-between;
+			/* Prevent user from selecting text */
+			user-select: none;
+			width: 100%;
+		}
+		div.gallery-overlay-arrow {
+			background-color: #222;
+			/* Pretend arrows are buttons */
+			cursor: pointer;
+			display: flex;
+			height: 100%;
+			/* Re-enable mouse input */
+			pointer-events: auto;
+			width: 40px;
+		}
+		div.gallery-overlay-arrow > span {
+			font-size: 1.5em;
+			/* Centre arrow symbol */
+			margin: auto;
 		}
 		div#gallery-images {
 			/* Vertically centre images */
