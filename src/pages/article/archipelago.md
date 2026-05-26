@@ -1,9 +1,10 @@
 ---
 layout: ../../components/article.astro
 title: Archipelago
+author: Zeroman95
+coauthors:
+  - Jack5
 ---
-# Archipelago
-
 [Archipelago](https://archipelago.gg/) is a cross-game randomiser designed to combine multiple games together to create one huge multi-world. All items from each world are placed into a single item pool, which is then scattered amongst every game in the multi-world. All games must work together to beat each-others' goals.
 
 For example, in a multi-world consisting of two games (e.g., *The Legend of Zelda: Ocarina of Time* and *Ratchet & Clank: Up Your Arsenal*), players of both games can find items both from their own game as well as items from the other.

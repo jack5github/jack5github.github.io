@@ -1,5 +1,12 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+	// Astro TypeScript options: https://docs.astro.build/en/guides/typescript/
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
+	"compilerOptions": {
+		"noImplicitAny": false,
+		// Vite compiler options: https://vite.dev/guide/features#typescript-compiler-options
+		"isolatedModules": true,
+		"types": ["vite/client"]
+	}
 }

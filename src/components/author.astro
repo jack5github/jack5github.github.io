@@ -1,0 +1,19 @@
+---
+const { name, coauthors } = Astro.props;
+
+let nameLower: string = name.toLowerCase().replace(' ', '-');
+---
+<hr/>
+<div id="author">
+	<img
+		src=`/images/authors/${nameLower}.webp`
+		onerror="this.onerror=null;this.src='/images/authors/unknown.webp'"
+	/>
+	<p>Written by {name}</p>
+	{ coauthors !== undefined && (
+		<p>Co-writers:</p>
+		<ul>{coauthors.map((coauthor: string) => (
+			<li>{coauthor}</li>
+		))}</ul>
+	) }
+</div>

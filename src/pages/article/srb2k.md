@@ -1,10 +1,9 @@
 ---
 layout: ../../components/article.astro
 title: Sonic Robo Blast 2 Kart
+author: Jack5
 hero: /images/heroes/srb2k.webp
 ---
-# Sonic Robo Blast 2 Kart
-
 Sonic Robo Blast 2 Kart (SRB2K) is a Sonic-themed kart racing game built on the [DOOM engine](https://en.wikipedia.org/wiki/Doom_engine) that has extensive mod support. Online multiplayer normally requires a LAN or a port-forwarded router, but it can also be played online using [ZeroTier](./zerotier). Regardless, it must be hosted and played by people with stable internet connections to avoid missed inputs.
 
 ## Game Installation

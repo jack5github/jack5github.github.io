@@ -1,7 +1,7 @@
 ---
 import Body from '../components/html.astro';
 const pages = import.meta.glob('./**/*.{astro,md}');
-const urls = Object.keys(pages);
+const urls: string[] = Object.keys(pages);
 for (let i = 0; i < urls.length; i++) {
 	urls[i] = urls[i].replace('./', '').replace('.astro', '').replace('.md', '');
 }

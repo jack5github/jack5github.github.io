@@ -1,12 +1,21 @@
 ---
+import Author from './author.astro';
 import Html from './html.astro';
+
 const { frontmatter } = Astro.props;
 ---
 <Html title={frontmatter.title}>
+	{ frontmatter.hero !== undefined && (
+		<img src={frontmatter.hero} alt={frontmatter.title}/>
+	) }
+	<h1>{frontmatter.title}</h1>
+	{ frontmatter.link !== undefined && (
+		<p><a href={frontmatter.link}>{frontmatter.link}</a></p>
+	)}
+	<slot/>
 	{
-		frontmatter.hero !== undefined && (
-			<img src={frontmatter.hero} alt={frontmatter.title}/>
+		frontmatter.author !== undefined && (
+			<Author name={frontmatter.author} coauthors={frontmatter.coauthors}/>
 		)
 	}
-	<slot/>
 </Html>
