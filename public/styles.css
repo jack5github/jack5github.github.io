@@ -72,14 +72,18 @@ div#hero:hover img {
 div#content {
 	padding: 20px;
 }
-div > :first-child {
+:is(div, th, td) > :first-child {
 	margin-top: 0px;
 }
-div > :last-child {
+:is(div, th, td) > :last-child {
 	margin-bottom: 0px;
 }
 a {
 	color: var(--colour-link-text);
+}
+ul,
+ol {
+	padding-inline-start: 30px;
 }
 code {
 	background-color: var(--colour-code-bg);
@@ -99,6 +103,12 @@ td {
 	font-size: 0.85em;
 	padding: 6px;
 	text-align: left;
+}
+.faded {
+	opacity: 0.35;
+}
+:is(th, td) > :is(ul, ol) {
+	padding-inline-start: 20px;
 }
 /* # Preference styles */
 /* ## Dark mode */
