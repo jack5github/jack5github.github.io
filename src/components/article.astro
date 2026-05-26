@@ -10,8 +10,14 @@ const { frontmatter } = Astro.props;
 	) }
 	<h1>{frontmatter.title}</h1>
 	{ frontmatter.link !== undefined && (
-		<p><a href={frontmatter.link}>{frontmatter.link}</a></p>
+		<p><a href={frontmatter.link.url}>{frontmatter.link.text || frontmatter.link.url}</a></p>
 	)}
+	{ frontmatter.cutout !== undefined && (
+		<img
+			src={frontmatter.cutout}
+			style="float: right; max-width: 192px;"
+		/>
+	) }
 	<slot/>
 	{
 		frontmatter.author !== undefined && (

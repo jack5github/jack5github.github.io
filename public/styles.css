@@ -38,3 +38,15 @@ img {
 	/* Images are not allowed to exceed the width of their containers */
 	max-width: 100%;
 }
+table,
+th,
+td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th,
+td {
+	font-size: 0.85em;
+	padding: 6px;
+	text-align: left;
+}

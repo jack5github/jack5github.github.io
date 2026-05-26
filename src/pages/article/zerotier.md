@@ -3,8 +3,8 @@ layout: ../../components/article.astro
 title: ZeroTier
 author: Jack5
 link:
-  text: Download
-  url: https://www.zerotier.com/download/
+    text: Download
+    url: https://www.zerotier.com/download/
 ---
 ZeroTier is a piece of software that connects computers together over the internet, assigning them IP addresses that allow them to communicate with each other as if they were on the same network. It is far safer than [LogMeIn Hamachi](https://en.wikipedia.org/wiki/LogMeIn_Hamachi), and works on multiple operating systems unlike [Radmin VPN](https://www.radmin-vpn.com/).
 
@@ -14,7 +14,7 @@ This connection makes it possible to play video games that only support multipla
 
 1. Download the MSI Installer from the [official download page](https://www.zerotier.com/download/).
 2. Install ZeroTier. It will appear as an icon in the taskbar system tray.
-  - If the install wizard shows the options *Modify*, *Repair* and *Uninstall*, ZeroTier is already installed and you can skip this step.
+    - If the install wizard shows the options *Modify*, *Repair* and *Uninstall*, ZeroTier is already installed and you can skip this step.
 3. Right-click the system tray icon and join a network by pasting the network ID sent to you by a friend.
 
 ## Linux Setup
@@ -31,5 +31,5 @@ These instructions have only been tested on Linux Mint 22.3.
 ### Connecting
 
 1. Start the ZeroTierOne client by executing `sudo ./zerotier-one` in the ZeroTierOne folder. The terminal will report that the Control Planes are starting and print nothing afterwards. This terminal tab must remain open to stay connected.
-  - If the Control Planes fail to reach the starting phase due to a port being in use, try restarting your computer.
+    - If the Control Planes fail to reach the starting phase due to a port being in use, try restarting your computer.
 2. If you have not already, in the same folder, follow the [Quickstart Guide](https://docs.zerotier.com/quickstart/) in order to join a network. Instead of `zerotier-cli`, type `./zerotier-cli`.
