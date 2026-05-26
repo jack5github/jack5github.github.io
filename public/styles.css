@@ -49,6 +49,8 @@ div#header > h1 {
 	text-decoration: none;
 }
 img {
+	/* Remove small gap below images */
+	display: block;
 	/* Images are not allowed to exceed the width of their containers */
 	max-width: 100%;
 }
