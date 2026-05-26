@@ -17,9 +17,9 @@ const { title } = Astro.props;
 			<p id="button-hide-panel">Close panel</p>
 			<script>
 				const button = document.getElementById('button-hide-panel');
-				button.addEventListener('click', () => {
+				button!.addEventListener('click', () => {
 					const panel = document.getElementById('panel');
-					panel.style.width = '0px';
+					panel!.style.width = '0px';
 				})
 			</script>
 			<h1>Preferences</h1>
@@ -44,11 +44,11 @@ const { title } = Astro.props;
 					modeButtons[i].addEventListener('click', () => {
 						const body = document.querySelector('body');
 						if (modeButtons[i].textContent === 'Dark') {
-							body.classList.add('dark');
+							body!.classList.add('dark');
 							localStorage.setItem('mode', 'dark');
 						} else {
-							body.classList.remove('dark');
-							localStorage.setItem('mode', null);
+							body!.classList.remove('dark');
+							localStorage.removeItem('mode');
 						}
 					})
 				}
@@ -56,12 +56,13 @@ const { title } = Astro.props;
 				for (let i = 0; i < skinButtons.length; i++) {
 					skinButtons[i].addEventListener('click', () => {
 						const body = document.querySelector('body');
-						body.classList.remove('skin-ir');
-						body.classList.remove('skin-race');
-						localStorage.setItem('skin', null);
-						if (skinButtons[i].getAttribute('data-skin') !== null) {
-							body.classList.add('skin-' + skinButtons[i].getAttribute('data-skin'));
-							localStorage.setItem('skin', skinButtons[i].getAttribute('data-skin'));
+						body!.classList.remove('skin-ir');
+						body!.classList.remove('skin-race');
+						localStorage.removeItem('skin');
+						const skin = skinButtons[i].getAttribute('data-skin');
+						if (skin !== null) {
+							body!.classList.add('skin-' + skin);
+							localStorage.setItem('skin', skin);
 						}
 					});
 				}
@@ -82,10 +83,10 @@ const { title } = Astro.props;
 		const skin = localStorage.getItem('skin');
 		const body = document.querySelector('body');
 		if (mode === 'dark') {
-			body.classList.add('dark');
+			body!.classList.add('dark');
 		}
 		if (skin !== null) {
-			body.classList.add('skin-' + skin);
+			body!.classList.add('skin-' + skin);
 		}
 	</script>
 </html>

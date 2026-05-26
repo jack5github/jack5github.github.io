@@ -3,9 +3,9 @@
 	<slot/>
 	<script>
 		const button = document.getElementById('button-show-panel');
-		button.addEventListener('click', () => {
+		button!.addEventListener('click', () => {
 			const panel = document.getElementById('panel');
-			panel.style.width = '250px';
+			panel!.style.width = '250px';
 		})
 	</script>
 </div>

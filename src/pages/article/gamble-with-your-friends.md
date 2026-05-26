@@ -2,8 +2,11 @@
 layout: ../../components/article.astro
 title: Gamble With Your Friends
 author: Jack5
+link:
+    text: Steam page
+    url: https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/
 ---
-[Gamble With Your Friends](https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/) is a casino roguelike friendslop game with online multiplayer for up to 6 players. Everyone must work together to pay off their debt to the loan shark, which increases each day, all within 5 minutes of the casino's operating hours. You may make use of items to more easily make money from the casino.
+Gamble With Your Friends is a casino roguelike friendslop game with online multiplayer for up to 6 players. Everyone must work together to pay off their debt to the loan shark, which increases each day, all within 5 minutes of the casino's operating hours. You may make use of items to more easily make money from the casino.
 
 ## How to Break the Bank
 

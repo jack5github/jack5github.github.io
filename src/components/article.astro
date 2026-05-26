@@ -15,14 +15,14 @@ const { frontmatter } = Astro.props;
 			 * Animate hero image on mouse hover. Allows user to zoom into whatever they are hovering over.
 			 */
 			const hero = document.getElementById('hero');
-			const heroImg = hero.querySelector('img');
+			const heroImg = hero!.querySelector('img');
 			document.addEventListener('mousemove', (event) => {
 				const mouseX = event.clientX;
 				const mouseY = event.clientY;
-				const heroRect = hero.getBoundingClientRect();
+				const heroRect = hero!.getBoundingClientRect();
 				const x = Math.max(0, Math.min(mouseX - heroRect.left, heroRect.width));
   			const y = Math.max(0, Math.min(mouseY - heroRect.top, heroRect.height));
-				heroImg.style["transform-origin"] = `${x}px ${y}px`;
+				heroImg!.style["transform-origin"] = `${x}px ${y}px`;
 			});
 		</script>
 	) }

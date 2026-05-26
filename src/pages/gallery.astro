@@ -31,10 +31,10 @@ const urlCount = urls.length;
 		 * Change the currently displayed image when the user presses the left or right arrow key or clicks an arrow button.
 		 */
 		const galleryImages = document.getElementById('gallery-images');
-		const imageCount = galleryImages.getAttribute('data-count');
+		const imageCount = Number.parseInt(galleryImages!.getAttribute('data-count')!);
 		document.addEventListener('keydown', (event) => {
-			const imageWidth = galleryImages.offsetWidth / imageCount;
-			let left = Number.parseInt(galleryImages.style.left.replace('px', ''));
+			const imageWidth = galleryImages!.offsetWidth / imageCount;
+			let left = Number.parseInt(galleryImages!.style.left.replace('px', ''));
 			if (Number.isNaN(left)) {
 				left = 0;
 			}
@@ -48,14 +48,14 @@ const urlCount = urls.length;
 			} else if (left < -imageWidth * (imageCount - 1)) {
 				left = -imageWidth * (imageCount - 1);
 			}
-			galleryImages.style.left = `${left}px`;
+			galleryImages!.style.left = `${left}px`;
 		});
 		const arrowLeft = document.getElementById('gallery-overlay-arrow-left');
-		arrowLeft.addEventListener('click', () => {
+		arrowLeft!.addEventListener('click', () => {
 			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }));
 		});
 		const arrowRight = document.getElementById('gallery-overlay-arrow-right');
-		arrowRight.addEventListener('click', () => {
+		arrowRight!.addEventListener('click', () => {
 			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }));
 		})
 	</script>
