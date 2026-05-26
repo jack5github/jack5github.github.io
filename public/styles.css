@@ -3,12 +3,12 @@
 	--colour-page: #808080;
 	--colour-accent-bg: #ff4200;
 	--colour-accent-text: #fff;
-	--colour-link-text: #ff490a;
 	--colour-column: #fcfcfc;
+	--colour-link-text: #ff490a;
 	--colour-text: #111;
 	--colour-code-bg: #0a1414;
 	--colour-code-border: #070e0e;
-	--colour-code-text: #eeee99;
+	--colour-code-text: #ee9;
 }
 body {
 	background-color: var(--colour-page);
@@ -64,6 +64,7 @@ div#hero {
 }
 div#hero img {
 	transition: transform 0.325s ease;
+	width: 100%;
 }
 div#hero:hover img {
 	transform: scale(1.4);
@@ -121,24 +122,33 @@ td {
 /* ## Dark mode */
 .dark {
 	color-scheme: dark;
-	--colour-page: #111111;
-	--colour-column: #333333;
+	--colour-page: #111;
+	--colour-column: #333;
 	--colour-text: #fcfcfc;
 }
 /* ## Skins */
 .skin-ir {
-	--colour-accent-bg: #000077;
-	--colour-accent-text: #eeee99;
-	--colour-link-text: #000077;
+	--colour-page: #002040;
+	--colour-accent-bg: #1a4066;
+	--colour-accent-text: #ffff90;
+	--colour-column: #ddd;
+	--colour-link-text: #1a4066;
+	--colour-text: #011;
 }
 .skin-ir.dark {
-	--colour-link-text: #eeee99;
+	--colour-column: #001b1b;
+	--colour-link-text: #ffff90;
+	--colour-text: #fcfcfc;
 }
 .skin-race {
 	--colour-page: #fff;
-	--colour-accent-bg: #ff0000;
-	--colour-link-text: #ff0000;
+	--colour-accent-bg: #f00;
+	--colour-column: #fff;
+	--colour-link-text: #f00;
+	--colour-text: #000;
 }
 .skin-race.dark {
 	--colour-page: #000;
+	--colour-column: #000;
+	--colour-text: #fff;
 }
