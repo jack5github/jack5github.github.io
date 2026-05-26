@@ -1,0 +1,92 @@
+---
+import Content from '../components/content.astro';
+import Html from '../components/html.astro';
+
+const urls: string[] = [
+	'/images/authors/jack5.webp',
+	'/images/authors/zeroman95.webp',
+	'/images/cutouts/karl.webp',
+	'/images/heroes/srb2k.webp',
+];
+const urlCount = urls.length;
+---
+<Html title="Gallery">
+	<div id="gallery">
+		<!--
+		TODO: Add gallery overlay
+		<div id="gallery-overlay">
+			<div id="gallery-overlay-arrows">
+				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-left">◀</div>
+				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-right">▶</div>
+			</div>
+			<div id="gallery-overlay-grid">{ urls.map((url) => (
+				<div><img src={url}/></div>
+			)) }</div></div>
+		</div>
+		-->
+		<div id="gallery-images" data-count={urlCount}>{ urls.map((url) => (
+			<div><img src={url}/></div>
+		)) }</div>
+	</div>
+	<script>
+		/**
+		 * Change currently displayed image when user presses left or right arrow keys.
+		 */
+		const gallery = document.getElementById('gallery');
+		const galleryImages = document.getElementById('gallery-images');
+		const imageCount = galleryImages.getAttribute('data-count');
+		document.addEventListener('keydown', (event) => {
+			const imageWidth = galleryImages.offsetWidth / imageCount;
+			let left = Number.parseInt(galleryImages.style.left.replace('px', ''));
+			if (Number.isNaN(left)) {
+				left = 0;
+			}
+			if (event.key === 'ArrowLeft') {
+				left += imageWidth;
+			} else if (event.key === 'ArrowRight') {
+				left -= imageWidth;
+			}
+			if (left > 0) {
+				left = 0;
+			} else if (left < -imageWidth * (imageCount - 1)) {
+				left = -imageWidth * (imageCount - 1);
+			}
+			galleryImages.style.left = `${left}px`;
+		});
+	</script>
+	<style define:vars={{ urlCount }}>
+		div#gallery {
+			background-color: black;
+			height: 512px;
+			overflow-x: hidden;
+			/* All child elements are positioned relative to this */
+			position: relative;
+		}
+		div#gallery > div {
+			left: 0px;
+			/* Position relative to parent */
+			position: absolute;
+			top: 0px;
+		}
+		div#gallery-images {
+			/* Vertically centre images */
+			align-items: center;
+			display: flex;
+			/* Left offset is dynamically changed by JavaScript */
+			left: 0px;
+			transition: left 0.35s ease-out;
+			/* Full width for each image */
+			width: calc(var(--urlCount) * 100%);
+		}
+		div#gallery-images > div {
+			display: flex;
+			/* Occupy equal space of parent */
+			flex: 1;
+			/* Horizontally centre images */
+			justify-content: center;
+		}
+		div#gallery-images img {
+			max-height: 512px;
+		}
+	</style>
+</Html>
