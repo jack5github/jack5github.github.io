@@ -2,6 +2,8 @@
 layout: ../../components/article.astro
 title: Bizzy
 author: Jack5
+coauthors:
+  - Zeroman95
 cutout: /images/cutouts/bizzy.webp
 ---
 Bizzy (real name *Elizabeth Layton*) is **SweetCookie500**'s player character in the **interp'd Reality** campaign and **interp'd Reality: Enjoy Your Stay**.
@@ -17,7 +19,7 @@ Bizzy is an ex-**Breakniks** (by accident) and ex-gambler (by choice), who resid
 | Lifestyle | Wretched <span class="faded">(Modest pre-iR)</span> |
 | Hair | Dark grey |
 | Skin | Light red <span class="faded">(dark grey as a cat)</span> |
-| Eyes | Dark grey with green pupils <span class="faded">(white with green pupils as a cat)</span> |
+| Eyes | Dark grey with yellow pupils <span class="faded">(white with yellow pupils as a cat)</span> |
 | Age | 24 (2 cat years) |
 | Height/Weight | Average <span class="faded">(half average as a cat)</span> |
 | Gender | Female |
