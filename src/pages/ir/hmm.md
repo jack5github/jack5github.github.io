@@ -13,23 +13,23 @@ He is the youngest out of his party members (even after his age increase) and al
 
 He had a close albeit strained relationship with **Gary B. Gone**, whom he used to live across the street from and sometimes bully, before Gary was kicked out of the **WasteNet**. Since then, Hmm has become associated with **Floro**, who used to be Gary's Harbringer.
 
-| Statistic      | Value                                                                                                  |
-| -------------- | ------------------------------------------------------------------------------------------------------ |
-| Alignment      | True Neutral                                                                                           |
-| Faith          | [Misotheism](https://en.wikipedia.org/wiki/Misotheism) <span class="faded">(Agnosticism pre-iR)</span> |
-| Lifestyle      | Comfortable                                                                                            |
-| Hair           | Black                                                                                                  |
-| Skin           | Brown                                                                                                  |
-| Eyes           | Green                                                                                                  |
-| Age            | 18 <span class="faded">(used to be 14)</span>                                                          |
-| Height/Weight  | Tallest/Heaviest out of his group                                                                      |
-| Gender         | Male                                                                                                   |
-| Languages      | <ul><li>English</li><li>Russian (Draconic)</li><li>Giant</li><li>Goblin</li></ul>                      |
-| Traits         | <ul><li>Impulsive</li><li>Unpredictable</li></ul>                                                      |
-| Ideals         | <ul><li>Wants to be the most powerful Wizard</li><li>Wants to be revered</li></ul>                     |
-| Bond           | Bonded to his allies                                                                                   |
-| Flaws          | <ul><li>Anger issues</li><li>Contrarian</li></ul>                                                      |
-| Favourite food | [Kazakh cuisine](https://en.wikipedia.org/wiki/Kazakh_cuisine) and fast food                           |
-| Organisation   | His family's kingdom                                                                                   |
-| Enemies        | All inherently bad people                                                                              |
-| Fears          | Nothing                                                                                                |
+| Statistic | Value |
+| - | - |
+| Alignment | True Neutral |
+| Faith | [Misotheism](https://en.wikipedia.org/wiki/Misotheism) <span class="faded">(Agnosticism pre-iR)</span> |
+| Lifestyle | Comfortable |
+| Hair | Black |
+| Skin | Brown |
+| Eyes | Green |
+| Age | 18 <span class="faded">(used to be 14)</span> |
+| Height/Weight | Tallest/Heaviest out of his group |
+| Gender | Male |
+| Languages | <ul><li>English</li><li>Russian (Draconic)</li><li>Giant</li><li>Goblin</li></ul> |
+| Traits | <ul><li>Impulsive</li><li>Unpredictable</li></ul> |
+| Ideals | <ul><li>Wants to be the most powerful Wizard</li><li>Wants to be revered</li></ul> |
+| Bond | Bonded to his allies |
+| Flaws | <ul><li>Anger issues</li><li>Contrarian</li></ul> |
+| Favourite food | [Kazakh cuisine](https://en.wikipedia.org/wiki/Kazakh_cuisine) and fast food |
+| Organisation | His family's kingdom |
+| Enemies | All inherently bad people |
+| Fears | Nothing |
