@@ -23,49 +23,72 @@ const { title } = Astro.props;
 				})
 			</script>
 			<h1>Preferences</h1>
+			<p id="button-reset-preferences">Reset all</p>
 			<h2>Mode</h2>
 			<ul>
 				<li><span class="button-mode">Light</span></li>
-				<li><span class="button-mode">Dark</span></li>
+				<li><span class="button-mode" data-value="dark">Dark</span></li>
 			</ul>
 			<h2>Skin</h2>
 			<ul>
 				<li><span class="button-skin">Jack5</span></li>
-				<li><span class="button-skin" data-skin="ir">interp'd Reality</span></li>
-				<li><span class="button-skin" data-skin="race">Race the Hedgehog</span></li>
+				<li><span class="button-skin" data-value="ir">interp'd Reality</span></li>
+				<li><span class="button-skin" data-value="race">Race the Hedgehog</span></li>
+			</ul>
+			<h2>Position</h2>
+			<ul>
+				<li><span class="button-position" data-value="left">Left</span></li>
+				<li><span class="button-position">Centred</span></li>
+				<li><span class="button-position" data-value="right">Right</span></li>
+			</ul>
+			<h2>Size</h2>
+			<ul>
+				<li><span class="button-size" data-value="small">Small</span></li>
+				<li><span class="button-size">Normal</span></li>
+				<li><span class="button-size" data-value="large">Large</span></li>
+				<li><span class="button-size" data-value="full">Full width</span></li>
 			</ul>
 		</div>
 			<script>
 				/**
-				 * Handle mode and skin button clicks. Updates the class of the body to use the correct styles and sets or unsets browser cookies on click.
+				 * Handle preference button clicks. Updates the class of the body to use the correct styles and sets or unsets browser cookies on click.
 				 */
-				const modeButtons = document.getElementsByClassName('button-mode');
-				for (let i = 0; i < modeButtons.length; i++) {
-					modeButtons[i].addEventListener('click', () => {
-						const body = document.querySelector('body');
-						if (modeButtons[i].textContent === 'Dark') {
-							body!.classList.add('dark');
-							localStorage.setItem('mode', 'dark');
-						} else {
-							body!.classList.remove('dark');
-							localStorage.removeItem('mode');
-						}
-					})
+				const body = document.querySelector('body');
+				const resetButton  = document.getElementById('button-reset-preferences');
+				resetButton!.addEventListener('click', () => {
+					body!.classList.remove(...Array.from(body!.classList).filter(
+						(className) => className.startsWith('mode-') ||
+						className.startsWith('skin-') ||
+						className.startsWith('position-') ||
+						className.startsWith('size-')
+					));
+					localStorage.removeItem('mode');
+					localStorage.removeItem('skin');
+					localStorage.removeItem('position');
+					localStorage.removeItem('size');
+				});
+
+				function addPrefListeners(pref: string) {
+					const prefButtons = document.getElementsByClassName('button-' + pref);
+					for (let i = 0; i < prefButtons.length; i++) {
+						prefButtons[i].addEventListener('click', () => {
+							body!.classList.remove(...Array.from(body!.classList).filter(
+								(className) => className.startsWith(pref + '-')
+							));
+							localStorage.removeItem(pref);
+							const value = prefButtons[i].getAttribute('data-value');
+							if (value !== null) {
+								body!.classList.add(pref + '-' + value);
+								localStorage.setItem(pref, value);
+							}
+						});
+					}
 				}
-				const skinButtons = document.getElementsByClassName('button-skin');
-				for (let i = 0; i < skinButtons.length; i++) {
-					skinButtons[i].addEventListener('click', () => {
-						const body = document.querySelector('body');
-						body!.classList.remove('skin-ir');
-						body!.classList.remove('skin-race');
-						localStorage.removeItem('skin');
-						const skin = skinButtons[i].getAttribute('data-skin');
-						if (skin !== null) {
-							body!.classList.add('skin-' + skin);
-							localStorage.setItem('skin', skin);
-						}
-					});
-				}
+
+				addPrefListeners('mode');
+				addPrefListeners('skin');
+				addPrefListeners('position');
+				addPrefListeners('size');
 			</script>
 		<!-- Primary column -->
 		<div id="column">
@@ -77,16 +100,24 @@ const { title } = Astro.props;
 	</body>
 	<script>
 		/**
-		 * Load the user's preferred mode and skin from their browser cookies and apply them to the page.
+		 * Load the user's preferences from their browser cookies and apply them to the page.
 		 */
-		const mode = localStorage.getItem('mode');
-		const skin = localStorage.getItem('skin');
 		const body = document.querySelector('body');
+		const mode = localStorage.getItem('mode');
 		if (mode === 'dark') {
-			body!.classList.add('dark');
+			body!.classList.add('mode-dark');
 		}
+		const skin = localStorage.getItem('skin');
 		if (skin !== null) {
 			body!.classList.add('skin-' + skin);
+		}
+		const position = localStorage.getItem('position');
+		if (position !== null) {
+			body!.classList.add('position-' + position);
+		}
+		const size = localStorage.getItem('size');
+		if (size !== null) {
+			body!.classList.add('size-' + size);
 		}
 	</script>
 </html>

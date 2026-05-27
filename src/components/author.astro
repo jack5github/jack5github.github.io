@@ -8,6 +8,7 @@ let nameLower: string = name.toLowerCase().replace(' ', '-');
 	<img
 		src=`/images/authors/${nameLower}.webp`
 		onerror="this.onerror=null;this.src='/images/authors/unknown.webp'"
+		alt={name}
 		style="max-width: 128px;"
 	/>
 	<p>Written by {name}</p>
