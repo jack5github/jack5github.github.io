@@ -1,11 +1,3 @@
 <div id="content">
-	<p id="button-show-panel" style="text-align: right;">Open panel</p>
 	<slot/>
-	<script>
-		const button = document.getElementById('button-show-panel');
-		button!.addEventListener('click', () => {
-			const panel = document.getElementById('panel');
-			panel!.style.width = '250px';
-		})
-	</script>
 </div>

@@ -21,9 +21,34 @@ body {
 	font-size: 1.12em;
 	margin: 0;
 }
+/* # Top button styles */
+div.top-button {
+	/* Centre inner content vertically */
+	align-items: center;
+	background-color: var(--colour-column);
+	/* Pretend div is a button */
+	cursor: pointer;
+	display: flex;
+	/* Centre inner content horizontally */
+	justify-content: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	height: 32px;
+	/* Position relative to parent */
+	position: absolute;
+	/* Prevent user from selecting text */
+	user-select: none;
+	width: 48px;
+}
+div#top-button-preferences {
+	/* Align to top-right with bottom-left rounded corner */
+	border-radius: 0px 0px 0px 8px;
+	right: 0px;
+}
 /* # Preferences panel styles */
 div#panel {
-	background-color: var(--colour-page);
+	background-color: var(--colour-column);
+	border-left: 3px solid var(--colour-accent-bg);
 	height: 100vh;
 	/* Prevent content from showing when panel is closed */
 	overflow-x: hidden;
@@ -44,6 +69,8 @@ div#column {
 	/* Stretch to fit screen height */
 	min-height: 100vh;
 	max-width: var(--breakpoint-medium);
+	/* All child elements are positioned relative to this */
+	position: relative;
 }
 /* Remove underline from container links */
 a:has(div) {
