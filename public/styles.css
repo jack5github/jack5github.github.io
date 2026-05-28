@@ -40,26 +40,38 @@ div.top-button {
 	user-select: none;
 	width: 48px;
 }
+div#top-button-navigation {
+	/* Align to top-left with bottom-right rounded corner */
+	border-radius: 0px 0px 8px 0px;
+	left: 0px;
+}
 div#top-button-preferences {
 	/* Align to top-right with bottom-left rounded corner */
 	border-radius: 0px 0px 0px 8px;
 	right: 0px;
 }
-/* # Preferences panel styles */
-div#panel {
+/* # Panel styles */
+div.panel {
 	background-color: var(--colour-column);
-	border-left: 3px solid var(--colour-accent-bg);
 	height: 100vh;
 	/* Prevent content from showing when panel is closed */
 	overflow-x: hidden;
-	/* Position panel at far right of screen */
+	/* Position panels at far end of screen */
 	position: fixed;
-	right: 0px;
-	text-align: right;
-	/* Width is dynamically changed by JavaScript */
+	transition: width 0.325s ease;
+	/* Widths are dynamically changed by JavaScript */
 	width: 0px;
 	/* Stay on top of everything */
 	z-index: 2;
+}
+div#panel-navigation {
+	border-right: 3px solid var(--colour-accent-bg);
+	left: 0px;
+}
+div#panel-preferences {
+	border-left: 3px solid var(--colour-accent-bg);
+	right: 0px;
+	text-align: right;
 }
 /* # Primary column styles */
 div#column {

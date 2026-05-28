@@ -18,6 +18,7 @@
 - [VSCodium](https://vscodium.com/) extensions:
   - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
   - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+  - [SVG](https://marketplace.visualstudio.com/items?itemName=jock.svg)
 - `npm run dev` - Host locally at http://localhost:4321
 - `npm run build` & `npm run preview` - Test before deploying
 - [Astro docs](https://docs.astro.build/en/basics/astro-pages/)

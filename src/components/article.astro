@@ -5,7 +5,7 @@ import Html from './html.astro';
 
 const { frontmatter } = Astro.props;
 ---
-<Html title={frontmatter.title}>
+<Html title={frontmatter.title} metaImage={frontmatter.hero}>
 	{ frontmatter.hero !== undefined && (
 		<a href={frontmatter.hero} target="_blank"><div id="hero">
 			<div id="hero-image">

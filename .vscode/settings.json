@@ -1,3 +1,6 @@
 {
-	"markdown.extension.tableFormatter.enabled": false
+	"markdown.extension.tableFormatter.enabled": false,
+	"[svg]": {
+		"editor.formatOnSave": false
+	}
 }

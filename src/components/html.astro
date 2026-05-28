@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+const { title, metaImage } = Astro.props;
 ---
 <html lang="en">
 	<head>
@@ -9,17 +9,63 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width"/>
 		<meta name="generator" content={Astro.generator}/>
 		<title>{title} | JACK5</title>
+		<!-- Discord embed properties -->
+		<meta name="theme-color" content="#ff4200" />
+		<meta property="og:title" content="{title} | JACK5" />
+		<!-- TODO: Add description property -->
+		{metaImage && (
+			<meta property="og:image" content={metaImage} />
+		)}
 	</head>
 	<body>
-		<!-- TODO: Add dedicated button for opening preferences panel -->
-		<!-- Preferences panel -->
-		<div id="panel">
-			<p id="button-hide-panel">Close panel</p>
+		<!-- Navigation panel -->
+		<div class="panel" id="panel-navigation">
+			<p id="button-hide-panel-navigation">Close panel</p>
 			<script>
-				const button = document.getElementById('button-hide-panel');
+				const button = document.getElementById('button-hide-panel-navigation');
 				button!.addEventListener('click', () => {
-					const panel = document.getElementById('panel');
-					panel!.style.width = '0px';
+					const panel = document.getElementById('panel-navigation');
+					panel!.style.width = '';
+				})
+			</script>
+			<h1>Navigation</h1>
+			<h2>Pages</h2>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/ir">interp'd Reality</a></li>
+			</ul>
+			<h2>Social</h2>
+			<ul>
+				<li><a href="https://backloggery.com/jack5" target="_blank"><img class="social-icon" src="/images/icons/backloggery.png"/> Backloggery</a></li>
+				<li><a href="https://jack5.bandcamp.com/" target="_blank"><img class="social-icon" src="/images/icons/bandcamp.svg"/> Bandcamp</a></li>
+				<li><a href="https://discord.gg/scRdSXY" target="_blank"><img class="social-icon" src="/images/icons/discord.svg"/> Discord</a></li>
+				<li><a href="https://gamebanana.com/members/1388315" target="_blank"><img class="social-icon" src="/images/icons/gamebanana.png"/> GameBanana</a></li>
+				<li><a href="https://github.com/jack5github" target="_blank"><img class="social-icon" src="/images/icons/github.svg"/> GitHub</a></li>
+				<li><a href="https://jack5gamemaker.itch.io/" target="_blank"><img class="social-icon" src="/images/icons/itch-io.svg"/> itch.io</a></li>
+				<li><a href="https://ko-fi.com/jack5" target="_blank"><img class="social-icon" src="/images/icons/ko-fi.svg"/> Ko-fi</a></li>
+				<li><a href="https://store.steampowered.com/curator/39208284/" target="_blank"><img class="social-icon" src="/images/icons/steam.svg"/> Steam curated games</a></li>
+				<li><a href="http://steamcommunity.com/id/jack5team/" target="_blank"><img class="social-icon" src="/images/icons/steam.svg"/> Steam profile</a></li>
+				<li><a href="https://youtube.com/@Jack5Official" target="_blank">YouTube (Jack5)</a></li>
+				<li><a href="https://youtube.com/@interpdReality" target="_blank">YouTube (interp'd Reality)</a></li>
+			</ul>
+		</div>
+		<style>
+			.panel a {
+				text-decoration: none;
+			}
+			img.social-icon {
+				display: inline-block;
+				width: 16px;
+			}
+		</style>
+		<!-- Preferences panel -->
+		<div class="panel" id="panel-preferences">
+			<p id="button-hide-panel-preferences">Close panel</p>
+			<script>
+				const button = document.getElementById('button-hide-panel-preferences');
+				button!.addEventListener('click', () => {
+					const panel = document.getElementById('panel-preferences');
+					panel!.style.width = '';
 				})
 			</script>
 			<h1>Preferences</h1>
@@ -92,16 +138,32 @@ const { title } = Astro.props;
 			</script>
 		<!-- Primary column -->
 		<div id="column">
-			<div class="top-button" id="top-button-preferences">☰</div>
+			<div class="top-button" id="top-button-navigation">☰</div>
+			<div class="top-button" id="top-button-preferences">⚙</div>
 			<a href="/"><div id="header">
 				<h1>JACK5</h1>
 			</div></a>
 			<slot/>
 			<script>
-				const button = document.getElementById('top-button-preferences');
-				button!.addEventListener('click', () => {
-					const panel = document.getElementById('panel');
-					panel!.style.width = '210px';
+				const navButton = document.getElementById('top-button-navigation');
+				const navPanel = document.getElementById('panel-navigation');
+				const prefButton = document.getElementById('top-button-preferences');
+				const prefPanel = document.getElementById('panel-preferences');
+				navButton!.addEventListener('click', () => {
+					if (navPanel!.style.width === '') {
+						navPanel!.style.width = '210px';
+					} else {
+						navPanel!.style.width = '';
+					}
+					prefPanel!.style.width = '';
+				})
+				prefButton!.addEventListener('click', () => {
+					if (prefPanel!.style.width === '') {
+						prefPanel!.style.width = '210px';
+					} else {
+						prefPanel!.style.width = '';
+					}
+					navPanel!.style.width = '';
 				})
 			</script>
 		</div>
