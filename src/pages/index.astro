@@ -3,17 +3,19 @@ import Content from '../components/content.astro';
 import Html from '../components/html.astro';
 
 const pages = import.meta.glob('./**/*.{astro,md}');
-const urls: string[] = Object.keys(pages);
-for (let i = 0; i < urls.length; i++) {
-	urls[i] = urls[i].replace('./', '').replace('.astro', '').replace('.md', '');
+const urlPaths: string[] = Object.keys(pages);
+const safeUrlPaths: string[] = []
+for (let i = 0; i < urlPaths.length; i++) {
+	if (urlPaths[i] === './404.astro') continue;
+	safeUrlPaths.push(urlPaths[i].replace('./', '').replace('.astro', '').replace('.md', ''));
 }
 ---
 <Html title="Home Page">
 	<Content>
 		<h1>Home Page</h1>
-		<ul>{ urls.map((url) => (
+		<ul>{ safeUrlPaths.map((safeUrlPath) => (
 			<li>
-				<a href={url}>{url}</a>
+				<a href={safeUrlPath}>{safeUrlPath}</a>
 			</li>
 		)) }</ul>
 	</Content>
