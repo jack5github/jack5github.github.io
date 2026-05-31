@@ -4,7 +4,7 @@ title: Gary B. Gone
 author: Jack5
 cutout: /images/cutouts/gary.webp
 ---
-Gary B. Gone (middle name unknown) was **Glitch_Out_Of_This_World**'s player character in the **interp'd Reality** campaign up until the end of episode 23.
+Gary B. Gone (middle name unknown) was **Glitch_Out_Of_This_World**'s player character in the **interp'd Reality** campaign up until the end of [episode 23](https://www.youtube.com/watch?v=H9lY2VeudXM).
 
 Gary B. Gone is the son of a noble family of elves with a Ranger build, and was the eldest out of his party members, yet not the tallest (second to [Hmm](/ir/hmm)). He is a light skinned fellow with dull green eyes and stylised black-blueish hair. He wears an old-timey duller-green tunic with long dull blue sleeves and a green cape, plus brown pants and puttees with green diagonal straps. Despite his elf heritage, he appears more humanoid than most, with the only true differentiator being his pointed ears.
 
