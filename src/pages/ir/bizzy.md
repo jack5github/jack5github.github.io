@@ -31,4 +31,4 @@ Bizzy is an ex-**Breakniks** (by accident) and ex-gambler (by choice), who resid
 | Favourite food | Spicy tuna mayonnaise sandwich |
 | Organisation | None <span class="faded">(Breakniks pre-iR)</span> |
 | Enemies | Tarsus Niali's goons (killed Tarsus) |
-| Fears | Flies, cheese on its own |
+| Fears | Flies, American-style cheese |

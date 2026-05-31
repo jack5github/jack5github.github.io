@@ -26,7 +26,7 @@ Karl has the uncanny ability to mould his character in any situation to portray 
 | Ideals | <ul><li>Loyal to friends</li><li>Robin Hood type</li></ul> |
 | Bond | Histnita Forums community |
 | Flaws | <ul><li>Runs when things look bad</li><li>Dealing with addiction</li></ul> |
-| Favourite food | Pint of Guinness and a good shepherd's pie |
+| Favourite food | Shepherd's pie and a pint of [Guinness](https://en.wikipedia.org/wiki/Guinness) |
 | Organisation | Bail Boys |
 | Enemies | "The Establishment" (all corporations) |
 | Fears | The oppression of the working class |

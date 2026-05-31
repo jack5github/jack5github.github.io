@@ -4,11 +4,11 @@ title: interp'd Reality
 author: Jack5
 hero: /images/heroes/ir.webp
 ---
-<!-- TODO: Write this article and add Gary B. Gone article -->
+<!-- TODO: Write this article -->
 ## Characters
 
 - [Karl](/ir/karl)
 - [Tipper](/ir/tipper)
 - [Hmm](/ir/hmm)
-- **Gary B. Gone**
+- [Gary B. Gone](/ir/gary)
 - [Bizzy](/ir/bizzy)
