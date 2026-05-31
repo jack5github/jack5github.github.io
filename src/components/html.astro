@@ -1,5 +1,7 @@
 ---
 const { title, metaImage } = Astro.props;
+
+const htmlTitle: string = title + ' | JACK5';
 ---
 <html lang="en">
 	<head>
@@ -11,7 +13,7 @@ const { title, metaImage } = Astro.props;
 		<title>{title} | JACK5</title>
 		<!-- Discord embed properties -->
 		<meta name="theme-color" content="#ff4200" />
-		<meta property="og:title" content="{title} | JACK5" />
+		<meta property="og:title" content={htmlTitle} />
 		<!-- TODO: Add description property -->
 		{metaImage && (
 			<meta property="og:image" content={metaImage} />
