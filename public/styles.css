@@ -152,6 +152,9 @@ td {
 :is(th, td) > :is(ul, ol) {
 	padding-inline-start: 20px;
 }
+lite-youtube {
+	max-width: 1080px !important;
+}
 /* # Preference styles */
 /* ## Dark mode */
 .mode-dark {
