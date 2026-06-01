@@ -1,4 +1,8 @@
 ---
+interface Props {
+	title: string;
+	metaImage?: string;
+}
 const { title, metaImage } = Astro.props;
 
 const htmlTitle: string = title + ' | JACK5';
@@ -142,10 +146,14 @@ const htmlTitle: string = title + ' | JACK5';
 		<div id="column">
 			<div class="top-button" id="top-button-navigation">☰</div>
 			<div class="top-button" id="top-button-preferences">⚙</div>
+			<!-- TODO: Change column to be flex layout so footer is always at the bottom -->
 			<a href="/"><div id="header">
 				<h1>JACK5</h1>
 			</div></a>
 			<slot/>
+			<footer style="padding: 10px; text-align: center;">
+				<p style="margin: 0px;">&copy; {new Date().getFullYear()} Jack5</p>
+			</footer>
 			<script>
 				const navButton = document.getElementById('top-button-navigation');
 				const navPanel = document.getElementById('panel-navigation');

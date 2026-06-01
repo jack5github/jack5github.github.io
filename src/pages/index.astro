@@ -1,6 +1,7 @@
 ---
 import Content from '../components/content.astro';
 import Html from '../components/html.astro';
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 
 const pages = import.meta.glob('./**/*.{astro,md,mdx}');
 const urlPaths: string[] = Object.keys(pages);
@@ -11,8 +12,13 @@ for (let i = 0; i < urlPaths.length; i++) {
 }
 ---
 <Html title="Home Page">
-	<Content>
-		<h1>Home Page</h1>
+	<Content indexInSearch={false}>
+		<h1 data-pagefind-meta="title">Home Page</h1>
+		<p>Congratulations, you have found Jack5's super-scuffed site. Expect a broken page layout and unfinished articles.</p>
+		<h2>Search</h2>
+		<PagefindConfig />
+		<pagefind-searchbox></pagefind-searchbox>
+		<h2>Sitemap</h2>
 		<ul>{ safeUrlPaths.map((safeUrlPath) => (
 			<li>
 				<a href={safeUrlPath}>{safeUrlPath}</a>

@@ -152,6 +152,30 @@ td {
 :is(th, td) > :is(ul, ol) {
 	padding-inline-start: 20px;
 }
+/* # Plugin component styles */
+div.pf-searchbox {
+	max-width: none !important;
+}
+input.pf-searchbox-input,
+span.pf-trigger-key,
+div.pf-searchbox-dropdown,
+a.pf-searchbox-result {
+	background-color: var(--colour-column) !important;
+	border: 1px solid var(--colour-page) !important;
+	color: var(--colour-text) !important;
+	font-family: sans-serif !important;
+}
+p.pf-searchbox-result-title {
+	color: var(--colour-text) !important;
+	font-weight: bold !important;
+}
+p.pf-searchbox-result-excerpt {
+	color: var(--colour-text) !important;
+}
+p.pf-searchbox-result-excerpt > mark {
+	color: var(--colour-link-text) !important;
+	font-weight: bold !important;
+}
 lite-youtube {
 	max-width: 1080px !important;
 }

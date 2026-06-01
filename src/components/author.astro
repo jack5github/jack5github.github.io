@@ -1,10 +1,14 @@
 ---
+interface Props {
+	name: string;
+	coauthors?: string[];
+}
 const { name, coauthors } = Astro.props;
 
 let nameLower: string = name.toLowerCase().replace(' ', '-');
 ---
 <hr/>
-<div id="author">
+<div id="author" data-pagefind-ignore>
 	<img
 		src=`/images/authors/${nameLower}.webp`
 		onerror="this.onerror=null;this.src='/images/authors/unknown.webp'"

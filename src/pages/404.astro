@@ -5,7 +5,7 @@ import Html from '../components/html.astro';
 const missingUrlPath: string = new URL(Astro.url).pathname;
 ---
 <Html title="404 Not Found">
-	<Content>
+	<Content indexInSearch={false}>
 		<h1>404: <code>{missingUrlPath}</code></h1>
 		<p>This page doesn't exist. It could be for one of the following reasons:</p>
 		<ul>

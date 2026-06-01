@@ -3,13 +3,20 @@ import Author from './author.astro';
 import Content from './content.astro';
 import Html from './html.astro';
 
+interface Props {
+	frontmatter: Record<string, any>;
+}
 const { frontmatter } = Astro.props;
 ---
 <Html title={frontmatter.title} metaImage={frontmatter.hero}>
 	{ frontmatter.hero !== undefined && (
 		<a href={frontmatter.hero} target="_blank"><div id="hero">
 			<div id="hero-image">
-				<img src={frontmatter.hero} alt={frontmatter.title}/>
+				<img
+					src={frontmatter.hero}
+					alt={frontmatter.title}
+					data-pagefind-meta="image[src], image_alt[alt]"
+				/>
 			</div>
 		</div></a>
 		<style>
@@ -55,9 +62,11 @@ const { frontmatter } = Astro.props;
 		</script>
 	) }
 	<Content>
-		<h1>{frontmatter.title}</h1>
+		<h1 data-pagefind-meta="title">{frontmatter.title}</h1>
 		{ frontmatter.link !== undefined && (
-			<p><a href={frontmatter.link.url}>{frontmatter.link.text || frontmatter.link.url}</a></p>
+			<p data-pagefind-ignore><a href={frontmatter.link.url}>
+				{frontmatter.link.text || frontmatter.link.url}
+			</a></p>
 		) }
 		{ frontmatter.cutout !== undefined && (
 			<img id="cutout" src={frontmatter.cutout}/>
