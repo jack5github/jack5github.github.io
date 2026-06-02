@@ -5,8 +5,9 @@ import Html from './html.astro';
 
 interface Props {
 	frontmatter: Record<string, any>;
+	headings: { depth: number; slug: string; text: string }[];
 }
-const { frontmatter } = Astro.props;
+const { frontmatter, headings } = Astro.props;
 ---
 <Html title={frontmatter.title} metaImage={frontmatter.hero}>
 	{ frontmatter.hero !== undefined && (
@@ -63,30 +64,58 @@ const { frontmatter } = Astro.props;
 	) }
 	<Content>
 		<h1 data-pagefind-meta="title">{frontmatter.title}</h1>
-		{ frontmatter.link !== undefined && (
-			<p data-pagefind-ignore><a href={frontmatter.link.url}>
-				{frontmatter.link.text || frontmatter.link.url}
-			</a></p>
-		) }
+		<!-- TODO: Remove margin of h1 when cutout is present above -->
 		{ frontmatter.cutout !== undefined && (
 			<img id="cutout" src={frontmatter.cutout}/>
 			<style>
 				img#cutout {
 					float: right;
 					margin: 0px 0px 6px 6px;
-					width: 192px;
+					max-width: 192px;
 					/*
 					TODO: Shrink cutout if screen is too small
 					@media screen and (max-width: var(--breakpoint-medium)) {
-						width: 128px;
+						max-width: 128px;
 					}
 					*/
 				}
 			</style>
 		) }
+		{ frontmatter.link !== undefined && (
+			<p data-pagefind-ignore><a href={frontmatter.link.url}>
+				{frontmatter.link.text || frontmatter.link.url}
+			</a></p>
+		) }
+		{ headings.length >= 2 && (
+			<div id="table-of-contents" data-pagefind-ignore>
+				<p style="font-weight: bold; margin-bottom: 0px;">Table of Contents</p>
+				<ul
+					style="list-style-type: square; margin-top: 0px; padding-inline-start: 25px;">
+					{ headings.map((heading) => (
+						<li style={`margin-left: ${(heading.depth - 2) * 25}px`}>
+							<a href={`#${heading.slug}`}>{heading.text}</a>
+						</li>
+					)) }
+				</ul>
+			</div>
+		)}
 		<slot/>
 		{ frontmatter.author !== undefined && (
 				<Author name={frontmatter.author} coauthors={frontmatter.coauthors}/>
 		) }
+		<script>
+			/**
+			 * Once the document has loaded, move the table of contents to just before the first heading after it.
+			 */
+			document.addEventListener('DOMContentLoaded', () => {
+				const tableOfContents = document.getElementById('table-of-contents');
+				const firstNonTitle = document.getElementById('content')!.querySelector(
+					'h2, h3, h4, h5, h6'
+				);
+				if (tableOfContents !== null && firstNonTitle !== null) {
+					firstNonTitle.insertAdjacentElement('beforebegin', tableOfContents);
+				}
+			})
+		</script>
 	</Content>
 </Html>

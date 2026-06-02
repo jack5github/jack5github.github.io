@@ -4,6 +4,7 @@ title: Archipelago
 author: Zeroman95
 coauthors:
   - Jack5
+cutout: /images/cutouts/archipelago.webp
 link:
   text: Website
   url: https://archipelago.gg/
