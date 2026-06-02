@@ -2,7 +2,7 @@
 	// Astro TypeScript options: https://docs.astro.build/en/guides/typescript/
 	"extends": "astro/tsconfigs/strict",
 	"include": [".astro/types.d.ts", "**/*"],
-	"exclude": ["dist"],
+	"exclude": ["dist", "rnd"],
 	"compilerOptions": {
 		"noImplicitAny": false,
 		// Vite compiler options: https://vite.dev/guide/features#typescript-compiler-options

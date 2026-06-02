@@ -66,9 +66,11 @@ const { frontmatter, headings } = Astro.props;
 		<h1 data-pagefind-meta="title">{frontmatter.title}</h1>
 		<!-- TODO: Remove margin of h1 when cutout is present above -->
 		{ frontmatter.cutout !== undefined && (
-			<img id="cutout" src={frontmatter.cutout}/>
+			<a id="cutout" href={frontmatter.cutout} target="_blank">
+				<img src={frontmatter.cutout}/>
+			</a>
 			<style>
-				img#cutout {
+				a#cutout {
 					float: right;
 					margin: 0px 0px 6px 6px;
 					max-width: 192px;
@@ -82,9 +84,9 @@ const { frontmatter, headings } = Astro.props;
 			</style>
 		) }
 		{ frontmatter.link !== undefined && (
-			<p data-pagefind-ignore><a href={frontmatter.link.url}>
-				{frontmatter.link.text || frontmatter.link.url}
-			</a></p>
+			<a id="article-link" href={frontmatter.link.url} data-pagefind-ignore>
+				{frontmatter.link.text || frontmatter.link.url} →
+			</a>
 		) }
 		{ headings.length >= 2 && (
 			<div id="table-of-contents" data-pagefind-ignore>
