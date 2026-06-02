@@ -26,34 +26,36 @@ const htmlTitle: string = title + ' | JACK5';
 	<body>
 		<!-- Navigation panel -->
 		<div class="panel" id="panel-navigation">
-			<p id="button-hide-panel-navigation">Close panel</p>
-			<script>
-				const button = document.getElementById('button-hide-panel-navigation');
-				button!.addEventListener('click', () => {
-					const panel = document.getElementById('panel-navigation');
-					panel!.style.width = '';
-				})
-			</script>
-			<h1>Navigation</h1>
-			<h2>Pages</h2>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/ir">interp'd Reality</a></li>
-			</ul>
-			<h2>Social</h2>
-			<ul>
-				<li><a href="https://backloggery.com/jack5" target="_blank"><img class="social-icon" src="/images/icons/backloggery.png"/> Backloggery</a></li>
-				<li><a href="https://jack5.bandcamp.com/" target="_blank"><img class="social-icon" src="/images/icons/bandcamp.svg"/> Bandcamp</a></li>
-				<li><a href="https://discord.gg/scRdSXY" target="_blank"><img class="social-icon" src="/images/icons/discord.svg"/> Discord</a></li>
-				<li><a href="https://gamebanana.com/members/1388315" target="_blank"><img class="social-icon" src="/images/icons/gamebanana.png"/> GameBanana</a></li>
-				<li><a href="https://github.com/jack5github" target="_blank"><img class="social-icon" src="/images/icons/github.svg"/> GitHub</a></li>
-				<li><a href="https://jack5gamemaker.itch.io/" target="_blank"><img class="social-icon" src="/images/icons/itch-io.svg"/> itch.io</a></li>
-				<li><a href="https://ko-fi.com/jack5" target="_blank"><img class="social-icon" src="/images/icons/ko-fi.svg"/> Ko-fi</a></li>
-				<li><a href="https://store.steampowered.com/curator/39208284/" target="_blank"><img class="social-icon" src="/images/icons/steam.svg"/> Steam curated games</a></li>
-				<li><a href="http://steamcommunity.com/id/jack5team/" target="_blank"><img class="social-icon" src="/images/icons/steam.svg"/> Steam profile</a></li>
-				<li><a href="https://youtube.com/@Jack5Official" target="_blank">YouTube (Jack5)</a></li>
-				<li><a href="https://youtube.com/@interpdReality" target="_blank">YouTube (interp'd Reality)</a></li>
-			</ul>
+			<div class="panel-content">
+				<p id="button-hide-panel-navigation">Close panel</p>
+				<script>
+					const button = document.getElementById('button-hide-panel-navigation');
+					button!.addEventListener('click', () => {
+						const panel = document.getElementById('panel-navigation');
+						panel!.style.width = '';
+					})
+				</script>
+				<h1>Navigation</h1>
+				<h2>Pages</h2>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/ir">interp'd Reality</a></li>
+				</ul>
+				<h2>Social</h2>
+				<ul>
+					<li><a href="https://backloggery.com/jack5" target="_blank"><img class="social-icon" src="/images/icons/backloggery.png"/> Backloggery</a></li>
+					<li><a href="https://jack5.bandcamp.com/" target="_blank"><img class="social-icon" src="/images/icons/bandcamp.svg"/> Bandcamp</a></li>
+					<li><a href="https://discord.gg/scRdSXY" target="_blank"><img class="social-icon" src="/images/icons/discord.svg"/> Discord</a></li>
+					<li><a href="https://gamebanana.com/members/1388315" target="_blank"><img class="social-icon" src="/images/icons/gamebanana.png"/> GameBanana</a></li>
+					<li><a href="https://github.com/jack5github" target="_blank"><img class="social-icon" src="/images/icons/github.svg"/> GitHub</a></li>
+					<li><a href="https://jack5gamemaker.itch.io/" target="_blank"><img class="social-icon" src="/images/icons/itch-io.svg"/> itch.io</a></li>
+					<li><a href="https://ko-fi.com/jack5" target="_blank"><img class="social-icon" src="/images/icons/ko-fi.svg"/> Ko-fi</a></li>
+					<li><a href="https://store.steampowered.com/curator/39208284/" target="_blank"><img class="social-icon" src="/images/icons/steam.svg"/> Steam curated games</a></li>
+					<li><a href="http://steamcommunity.com/id/jack5team/" target="_blank"><img class="social-icon" src="/images/icons/steam.svg"/> Steam profile</a></li>
+					<li><a href="https://youtube.com/@Jack5Official" target="_blank">YouTube (Jack5)</a></li>
+					<li><a href="https://youtube.com/@interpdReality" target="_blank">YouTube (interp'd Reality)</a></li>
+				</ul>
+			</div>
 		</div>
 		<style>
 			.panel a {
@@ -66,82 +68,84 @@ const htmlTitle: string = title + ' | JACK5';
 		</style>
 		<!-- Preferences panel -->
 		<div class="panel" id="panel-preferences">
-			<p id="button-hide-panel-preferences">Close panel</p>
-			<script>
-				const button = document.getElementById('button-hide-panel-preferences');
-				button!.addEventListener('click', () => {
-					const panel = document.getElementById('panel-preferences');
-					panel!.style.width = '';
-				})
-			</script>
-			<h1>Preferences</h1>
-			<p id="button-reset-preferences">Reset all</p>
-			<h2>Mode</h2>
-			<ul>
-				<li><span class="button-mode">Light</span></li>
-				<li><span class="button-mode" data-value="dark">Dark</span></li>
-			</ul>
-			<h2>Skin</h2>
-			<ul>
-				<li><span class="button-skin">Jack5</span></li>
-				<li><span class="button-skin" data-value="ir">interp'd Reality</span></li>
-				<li><span class="button-skin" data-value="race">Race the Hedgehog</span></li>
-			</ul>
-			<h2>Position</h2>
-			<ul>
-				<li><span class="button-position" data-value="left">Left</span></li>
-				<li><span class="button-position">Centred</span></li>
-				<li><span class="button-position" data-value="right">Right</span></li>
-			</ul>
-			<h2>Size</h2>
-			<ul>
-				<li><span class="button-size" data-value="small">Small</span></li>
-				<li><span class="button-size">Normal</span></li>
-				<li><span class="button-size" data-value="large">Large</span></li>
-				<li><span class="button-size" data-value="full">Full width</span></li>
-			</ul>
+			<div class="panel-content">
+				<p id="button-hide-panel-preferences">Close panel</p>
+				<script>
+					const button = document.getElementById('button-hide-panel-preferences');
+					button!.addEventListener('click', () => {
+						const panel = document.getElementById('panel-preferences');
+						panel!.style.width = '';
+					})
+				</script>
+				<h1>Preferences</h1>
+				<p id="button-reset-preferences">Reset all</p>
+				<h2>Mode</h2>
+				<ul>
+					<li><span class="button-mode">Light</span></li>
+					<li><span class="button-mode" data-value="dark">Dark</span></li>
+				</ul>
+				<h2>Skin</h2>
+				<ul>
+					<li><span class="button-skin">Jack5</span></li>
+					<li><span class="button-skin" data-value="ir">interp'd Reality</span></li>
+					<li><span class="button-skin" data-value="race">Race the Hedgehog</span></li>
+				</ul>
+				<h2>Position</h2>
+				<ul>
+					<li><span class="button-position" data-value="left">Left</span></li>
+					<li><span class="button-position">Centred</span></li>
+					<li><span class="button-position" data-value="right">Right</span></li>
+				</ul>
+				<h2>Size</h2>
+				<ul>
+					<li><span class="button-size" data-value="small">Small</span></li>
+					<li><span class="button-size">Normal</span></li>
+					<li><span class="button-size" data-value="large">Large</span></li>
+					<li><span class="button-size" data-value="full">Full width</span></li>
+				</ul>
+			</div>
 		</div>
-			<script>
-				/**
-				 * Handle preference button clicks. Updates the class of the body to use the correct styles and sets or unsets browser cookies on click.
-				 */
-				const body = document.querySelector('body');
-				const resetButton  = document.getElementById('button-reset-preferences');
-				resetButton!.addEventListener('click', () => {
-					body!.classList.remove(...Array.from(body!.classList).filter(
-						(className) => className.startsWith('mode-') ||
-						className.startsWith('skin-') ||
-						className.startsWith('position-') ||
-						className.startsWith('size-')
-					));
-					localStorage.removeItem('mode');
-					localStorage.removeItem('skin');
-					localStorage.removeItem('position');
-					localStorage.removeItem('size');
-				});
+		<script>
+			/**
+			 * Handle preference button clicks. Updates the class of the body to use the correct styles and sets or unsets browser cookies on click.
+			 */
+			const body = document.querySelector('body');
+			const resetButton  = document.getElementById('button-reset-preferences');
+			resetButton!.addEventListener('click', () => {
+				body!.classList.remove(...Array.from(body!.classList).filter(
+					(className) => className.startsWith('mode-') ||
+					className.startsWith('skin-') ||
+					className.startsWith('position-') ||
+					className.startsWith('size-')
+				));
+				localStorage.removeItem('mode');
+				localStorage.removeItem('skin');
+				localStorage.removeItem('position');
+				localStorage.removeItem('size');
+			});
 
-				function addPrefListeners(pref: string) {
-					const prefButtons = document.getElementsByClassName('button-' + pref);
-					for (let i = 0; i < prefButtons.length; i++) {
-						prefButtons[i].addEventListener('click', () => {
-							body!.classList.remove(...Array.from(body!.classList).filter(
-								(className) => className.startsWith(pref + '-')
-							));
-							localStorage.removeItem(pref);
-							const value = prefButtons[i].getAttribute('data-value');
-							if (value !== null) {
-								body!.classList.add(pref + '-' + value);
-								localStorage.setItem(pref, value);
-							}
-						});
-					}
+			function addPrefListeners(pref: string) {
+				const prefButtons = document.getElementsByClassName('button-' + pref);
+				for (let i = 0; i < prefButtons.length; i++) {
+					prefButtons[i].addEventListener('click', () => {
+						body!.classList.remove(...Array.from(body!.classList).filter(
+							(className) => className.startsWith(pref + '-')
+						));
+						localStorage.removeItem(pref);
+						const value = prefButtons[i].getAttribute('data-value');
+						if (value !== null) {
+							body!.classList.add(pref + '-' + value);
+							localStorage.setItem(pref, value);
+						}
+					});
 				}
+			}
 
-				addPrefListeners('mode');
-				addPrefListeners('skin');
-				addPrefListeners('position');
-				addPrefListeners('size');
-			</script>
+			addPrefListeners('mode');
+			addPrefListeners('skin');
+			addPrefListeners('position');
+			addPrefListeners('size');
+		</script>
 		<!-- Primary column -->
 		<div id="column">
 			<div class="top-button" id="top-button-navigation">☰</div>
@@ -161,7 +165,8 @@ const htmlTitle: string = title + ' | JACK5';
 				const prefPanel = document.getElementById('panel-preferences');
 				navButton!.addEventListener('click', () => {
 					if (navPanel!.style.width === '') {
-						navPanel!.style.width = '210px';
+						const navPanelContent = navPanel!.getElementsByClassName('panel-content')[0];
+						navPanel!.style.width = navPanelContent.computedStyleMap().get('width')!.toString();
 					} else {
 						navPanel!.style.width = '';
 					}
@@ -169,7 +174,8 @@ const htmlTitle: string = title + ' | JACK5';
 				})
 				prefButton!.addEventListener('click', () => {
 					if (prefPanel!.style.width === '') {
-						prefPanel!.style.width = '210px';
+						const prefPanelContent = prefPanel!.getElementsByClassName('panel-content')[0];
+						prefPanel!.style.width = prefPanelContent.computedStyleMap().get('width')!.toString();
 					} else {
 						prefPanel!.style.width = '';
 					}

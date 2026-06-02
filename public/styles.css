@@ -64,6 +64,13 @@ div.panel {
 	/* Stay on top of everything */
 	z-index: 2;
 }
+div.panel-content {
+	/* Include padding as part of width */
+	box-sizing: border-box;
+	padding: 10px;
+	/* Prevent content from word wrapping when panel is opening */
+	width: 230px;
+}
 div#panel-navigation {
 	border-right: 3px solid var(--colour-accent-bg);
 	left: 0px;
@@ -72,6 +79,11 @@ div#panel-preferences {
 	border-left: 3px solid var(--colour-accent-bg);
 	right: 0px;
 	text-align: right;
+}
+div#panel-preferences > div.panel-content {
+	/* Prevent content from sliding when panel is opening */
+	position: absolute;
+	right: 0px;
 }
 /* # Primary column styles */
 div#column {
