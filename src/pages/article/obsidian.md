@@ -6,13 +6,13 @@ link:
   text: Download
   url: https://obsidian.md/
 ---
-Obsidian is a note-taking app for desktop and mobile operating systems that stores notes in Markdown files. All notes, vault settings and installed plugins are saved locally, making it possible to write notes without an internet connection and synchronise them on multiple devices using [Syncthing](https://syncthing.net/). 
+Obsidian is a note-taking app for desktop and mobile operating systems that stores notes in Markdown files. All notes, vault settings and installed plugins are saved locally, making it possible to write notes without an internet connection and synchronise them on multiple devices using [Syncthing](https://syncthing.net/).
 
 ## File organisation
 
 When getting started with Obisidian, it is important to get the folder structure right from the start, as otherwise it will become harder to use over time.
 
-The eACCESS framework (demonstrated in [this YouTube video]((https://youtu.be/WtKeeDYA_2I?si=SrDLlVTgcvFA4iaf&t=595))) splits notes into a number of categories that are most reflective of the kinds of information that needs to be stored. I have turned it into a root-level folder structure customised for my own needs, as shown below:
+The eACCESS framework (demonstrated in [this YouTube video](https://youtu.be/WtKeeDYA_2I?si=SrDLlVTgcvFA4iaf&t=595)) splits notes into a number of categories that are most reflective of the kinds of information that needs to be stored. I have turned it into a root-level folder structure customised for my own needs, as shown below:
 
 - `0 - Unorganised` a.k.a. **encounters**
   - Anything that has yet to be elaborated on and sorted into the other categories.

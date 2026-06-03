@@ -5,14 +5,18 @@ interface Props {
 }
 const { name, coauthors } = Astro.props;
 
-const authors: { nameLower: string; colour: string, url: string }[] = [
+const authors: { nameLower: string; colour: string; url: string }[] = [
 	// TODO: Use more appealing colour #ff4200 in Jack5 icon
-	{ nameLower: 'jack5', colour: '#ff4d00', url: 'https://discord.gg/scRdSXY' },
-	{ nameLower: 'zeroman95', colour: '#90afe0', url: 'https://steamcommunity.com/id/DN9328/' },
+	{ nameLower: "jack5", colour: "#ff4d00", url: "https://discord.gg/scRdSXY" },
+	{
+		nameLower: "zeroman95",
+		colour: "#90afe0",
+		url: "https://steamcommunity.com/id/DN9328/",
+	},
 ];
-let nameLower: string = name.toLowerCase().replace(' ', '-');
-let bgColour: string = 'inherit';
-let authorUrl: string = '#';
+let nameLower: string = name.toLowerCase().replace(" ", "-");
+let bgColour: string = "inherit";
+let authorUrl: string = "#";
 for (let i = 0; i < authors.length; i++) {
 	if (authors[i].nameLower === nameLower) {
 		bgColour = authors[i].colour;
@@ -25,9 +29,12 @@ let authorStyle: string = `
 	border-radius: 14px;
 	margin-top: 20px;
 	padding: 10px;
-`.replace(/\s+/g, ' ').trim();
+`
+	.replace(/\s+/g, " ")
+	.trim();
 ---
-<hr/>
+
+<hr />
 <div id="author" style={authorStyle} data-pagefind-ignore>
 	<div id="author-main" style="align-items: center; display: flex; gap: 8px;">
 		<a href={authorUrl} target="_blank">

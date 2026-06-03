@@ -1,19 +1,21 @@
 ---
-import Content from '../components/content.astro';
-import Html from '../components/html.astro';
+import Content from "../components/content.astro";
+import Html from "../components/html.astro";
 
-const urls: string[] = [
-	'/images/heroes/gmod.webp',
-	'/images/heroes/srb2k.webp',
-];
+const urls: string[] = ["/images/heroes/gmod.webp", "/images/heroes/srb2k.webp"];
 const urlCount = urls.length;
 ---
+
 <Html title="Gallery">
 	<div id="gallery">
 		<div id="gallery-overlay">
 			<div id="gallery-overlay-arrows">
-				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-left"><span>◀</span></div>
-				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-right"><span>▶</span></div>
+				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-left">
+					<span>◀</span>
+				</div>
+				<div class="gallery-overlay-arrow" id="gallery-overlay-arrow-right">
+					<span>▶</span>
+				</div>
 			</div>
 			<!--
 			TODO: Add gallery overlay grid
@@ -22,25 +24,33 @@ const urlCount = urls.length;
 			)) }</div></div>
 			-->
 		</div>
-		<div id="gallery-images" data-count={urlCount}>{ urls.map((url) => (
-			<div><a href={url} target="_blank"><img src={url}/></a></div>
-		)) }</div>
+		<div id="gallery-images" data-count={urlCount}>
+			{
+				urls.map((url) => (
+					<div>
+						<a href={url} target="_blank">
+							<img src={url} />
+						</a>
+					</div>
+				))
+			}
+		</div>
 	</div>
 	<script>
 		/**
 		 * Change the currently displayed image when the user presses the left or right arrow key or clicks an arrow button.
 		 */
-		const galleryImages = document.getElementById('gallery-images');
-		const imageCount = Number.parseInt(galleryImages!.getAttribute('data-count')!);
-		document.addEventListener('keydown', (event) => {
+		const galleryImages = document.getElementById("gallery-images");
+		const imageCount = Number.parseInt(galleryImages!.getAttribute("data-count")!);
+		document.addEventListener("keydown", (event) => {
 			const imageWidth = galleryImages!.offsetWidth / imageCount;
-			let left = Number.parseInt(galleryImages!.style.left.replace('px', ''));
+			let left = Number.parseInt(galleryImages!.style.left.replace("px", ""));
 			if (Number.isNaN(left)) {
 				left = 0;
 			}
-			if (event.key === 'ArrowLeft') {
+			if (event.key === "ArrowLeft") {
 				left += imageWidth;
-			} else if (event.key === 'ArrowRight') {
+			} else if (event.key === "ArrowRight") {
 				left -= imageWidth;
 			}
 			if (left > 0) {
@@ -50,14 +60,14 @@ const urlCount = urls.length;
 			}
 			galleryImages!.style.left = `${left}px`;
 		});
-		const arrowLeft = document.getElementById('gallery-overlay-arrow-left');
-		arrowLeft!.addEventListener('click', () => {
-			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }));
+		const arrowLeft = document.getElementById("gallery-overlay-arrow-left");
+		arrowLeft!.addEventListener("click", () => {
+			document.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowLeft" }));
 		});
-		const arrowRight = document.getElementById('gallery-overlay-arrow-right');
-		arrowRight!.addEventListener('click', () => {
-			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }));
-		})
+		const arrowRight = document.getElementById("gallery-overlay-arrow-right");
+		arrowRight!.addEventListener("click", () => {
+			document.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight" }));
+		});
 	</script>
 	<style define:vars={{ urlCount }}>
 		div#gallery {

@@ -1,16 +1,17 @@
 ---
-import Content from '../components/content.astro';
-import Html from '../components/html.astro';
+import Content from "../components/content.astro";
+import Html from "../components/html.astro";
 import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 
-const pages = import.meta.glob('./**/*.{astro,md,mdx}');
+const pages = import.meta.glob("./**/*.{astro,md,mdx}");
 const urlPaths: string[] = Object.keys(pages);
-const safeUrlPaths: string[] = []
+const safeUrlPaths: string[] = [];
 for (let i = 0; i < urlPaths.length; i++) {
-	if (urlPaths[i] === './404.astro') continue;
-	safeUrlPaths.push(urlPaths[i].replace('./', '').split('.')[0]);
+	if (urlPaths[i] === "./404.astro") continue;
+	safeUrlPaths.push(urlPaths[i].replace("./", "").split(".")[0]);
 }
 ---
+
 <Html title="Home Page">
 	<Content indexInSearch={false}>
 		<h1 data-pagefind-meta="title">Home Page</h1>
@@ -19,10 +20,14 @@ for (let i = 0; i < urlPaths.length; i++) {
 		<PagefindConfig />
 		<pagefind-searchbox></pagefind-searchbox>
 		<h2>Sitemap</h2>
-		<ul>{ safeUrlPaths.map((safeUrlPath) => (
-			<li>
-				<a href={safeUrlPath}>{safeUrlPath}</a>
-			</li>
-		)) }</ul>
+		<ul>
+			{
+				safeUrlPaths.map((safeUrlPath) => (
+					<li>
+						<a href={safeUrlPath}>{safeUrlPath}</a>
+					</li>
+				))
+			}
+		</ul>
 	</Content>
 </Html>

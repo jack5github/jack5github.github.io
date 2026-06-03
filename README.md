@@ -17,7 +17,8 @@
 - `npm install` - Install dependencies
 - [VSCodium](https://vscodium.com/) extensions:
   - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
-  - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+  - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+  - [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
   - [SVG](https://marketplace.visualstudio.com/items?itemName=jock.svg)
 - `npm run dev` - Host locally at http://localhost:4321
 - `npm run build` & `npm run preview` - Test before deploying

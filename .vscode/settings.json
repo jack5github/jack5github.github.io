@@ -1,4 +1,7 @@
 {
+	"[astro]": {
+		"editor.formatOnSave": false
+	},
 	"markdown.extension.tableFormatter.enabled": false,
 	"[svg]": {
 		"editor.formatOnSave": false

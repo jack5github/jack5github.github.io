@@ -148,6 +148,7 @@ div#table-of-contents {
 	background-color: var(--colour-code-bg);
 	border: 1px solid var(--colour-code-border);
 	border-radius: 6px;
+	color: var(--colour-code-text);
 	font-size: 0.875em;
 	padding: 10px;
 	width: fit-content;

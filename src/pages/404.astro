@@ -1,9 +1,10 @@
 ---
-import Content from '../components/content.astro';
-import Html from '../components/html.astro';
+import Content from "../components/content.astro";
+import Html from "../components/html.astro";
 
 const missingUrlPath: string = new URL(Astro.url).pathname;
 ---
+
 <Html title="404 Not Found">
 	<Content indexInSearch={false}>
 		<h1>404: <code>{missingUrlPath}</code></h1>
@@ -12,7 +13,11 @@ const missingUrlPath: string = new URL(Astro.url).pathname;
 			<li>You or someone else mispelled the URL.</li>
 			<li>You clicked a broken link.</li>
 			<li>You're misremembering what's on this website.</li>
-			<li><span style="display: inline-block; transform: scale(1, -1);">A cosmic ray flipped a bit of memory.</span></li>
+			<li>
+				<span style="display: inline-block; transform: scale(1, -1);">
+					A cosmic ray flipped a bit of memory.
+				</span>
+			</li>
 		</ul>
 		<p>Let's try this again. <a href="/">Go back to the home page.</a></p>
 	</Content>

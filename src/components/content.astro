@@ -4,6 +4,7 @@ interface Props {
 }
 let { indexInSearch } = Astro.props;
 ---
+
 <div id="content" data-pagefind-body={indexInSearch !== false ? true : undefined}>
-	<slot/>
+	<slot />
 </div>

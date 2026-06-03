@@ -23,6 +23,7 @@ To format a drive, select it in GParted and create a partition table of type `gp
 4. Run the command `sudo mount <dev directory> <mnt directory>`.
 
 ## Permanently mounting
+
 1. Open GParted, find the UUID of the drive that has been temporarily mounted, and copy it to your clipboard or save it to a text file.
 2. Open the file `/etc/fstab` in a text editor with `sudo` privileges and add the line `UUID=<uuid> <mnt directory> ext4 defaults,noatime 0 0`.
 3. Restart your computer. The drive should mount every time it turns on.

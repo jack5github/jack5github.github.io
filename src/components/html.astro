@@ -5,23 +5,22 @@ interface Props {
 }
 const { title, metaImage } = Astro.props;
 
-const htmlTitle: string = title + ' | JACK5';
+const htmlTitle: string = title + " | JACK5";
 ---
+
 <html lang="en">
 	<head>
-		<meta charset="utf-8"/>
-		<link rel="icon" href="/favicon.ico"/>
-		<link rel="stylesheet" href="/styles.css">
-		<meta name="viewport" content="width=device-width"/>
-		<meta name="generator" content={Astro.generator}/>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/styles.css" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
 		<title>{title} | JACK5</title>
 		<!-- Discord embed properties -->
 		<meta name="theme-color" content="#ff4200" />
 		<meta property="og:title" content={htmlTitle} />
 		<!-- TODO: Add description property -->
-		{metaImage && (
-			<meta property="og:image" content={metaImage} />
-		)}
+		{metaImage && <meta property="og:image" content={metaImage} />}
 	</head>
 	<body>
 		<!-- Navigation panel -->
@@ -29,11 +28,13 @@ const htmlTitle: string = title + ' | JACK5';
 			<div class="panel-content">
 				<p id="button-hide-panel-navigation">Close panel</p>
 				<script>
-					const button = document.getElementById('button-hide-panel-navigation');
-					button!.addEventListener('click', () => {
-						const panel = document.getElementById('panel-navigation');
-						panel!.style.width = '';
-					})
+					const button = document.getElementById(
+						"button-hide-panel-navigation"
+					);
+					button!.addEventListener("click", () => {
+						const panel = document.getElementById("panel-navigation");
+						panel!.style.width = "";
+					});
 				</script>
 				<h1>Navigation</h1>
 				<h2>Pages</h2>
@@ -71,11 +72,13 @@ const htmlTitle: string = title + ' | JACK5';
 			<div class="panel-content">
 				<p id="button-hide-panel-preferences">Close panel</p>
 				<script>
-					const button = document.getElementById('button-hide-panel-preferences');
-					button!.addEventListener('click', () => {
-						const panel = document.getElementById('panel-preferences');
-						panel!.style.width = '';
-					})
+					const button = document.getElementById(
+						"button-hide-panel-preferences"
+					);
+					button!.addEventListener("click", () => {
+						const panel = document.getElementById("panel-preferences");
+						panel!.style.width = "";
+					});
 				</script>
 				<h1>Preferences</h1>
 				<p id="button-reset-preferences">Reset all</p>
@@ -109,42 +112,47 @@ const htmlTitle: string = title + ' | JACK5';
 			/**
 			 * Handle preference button clicks. Updates the class of the body to use the correct styles and sets or unsets browser cookies on click.
 			 */
-			const body = document.querySelector('body');
-			const resetButton  = document.getElementById('button-reset-preferences');
-			resetButton!.addEventListener('click', () => {
-				body!.classList.remove(...Array.from(body!.classList).filter(
-					(className) => className.startsWith('mode-') ||
-					className.startsWith('skin-') ||
-					className.startsWith('position-') ||
-					className.startsWith('size-')
-				));
-				localStorage.removeItem('mode');
-				localStorage.removeItem('skin');
-				localStorage.removeItem('position');
-				localStorage.removeItem('size');
+			const body = document.querySelector("body");
+			const resetButton = document.getElementById("button-reset-preferences");
+			resetButton!.addEventListener("click", () => {
+				body!.classList.remove(
+					...Array.from(body!.classList).filter(
+						(className) =>
+							className.startsWith("mode-") ||
+							className.startsWith("skin-") ||
+							className.startsWith("position-") ||
+							className.startsWith("size-")
+					)
+				);
+				localStorage.removeItem("mode");
+				localStorage.removeItem("skin");
+				localStorage.removeItem("position");
+				localStorage.removeItem("size");
 			});
 
 			function addPrefListeners(pref: string) {
-				const prefButtons = document.getElementsByClassName('button-' + pref);
+				const prefButtons = document.getElementsByClassName("button-" + pref);
 				for (let i = 0; i < prefButtons.length; i++) {
-					prefButtons[i].addEventListener('click', () => {
-						body!.classList.remove(...Array.from(body!.classList).filter(
-							(className) => className.startsWith(pref + '-')
-						));
+					prefButtons[i].addEventListener("click", () => {
+						body!.classList.remove(
+							...Array.from(body!.classList).filter((className) =>
+								className.startsWith(pref + "-")
+							)
+						);
 						localStorage.removeItem(pref);
-						const value = prefButtons[i].getAttribute('data-value');
+						const value = prefButtons[i].getAttribute("data-value");
 						if (value !== null) {
-							body!.classList.add(pref + '-' + value);
+							body!.classList.add(pref + "-" + value);
 							localStorage.setItem(pref, value);
 						}
 					});
 				}
 			}
 
-			addPrefListeners('mode');
-			addPrefListeners('skin');
-			addPrefListeners('position');
-			addPrefListeners('size');
+			addPrefListeners("mode");
+			addPrefListeners("skin");
+			addPrefListeners("position");
+			addPrefListeners("size");
 		</script>
 		<!-- Primary column -->
 		<div id="column">
@@ -154,33 +162,41 @@ const htmlTitle: string = title + ' | JACK5';
 			<a href="/"><div id="header">
 				<h1>JACK5</h1>
 			</div></a>
-			<slot/>
+			<slot />
 			<footer style="padding: 10px; text-align: center;">
 				<p style="margin: 0px;">&copy; {new Date().getFullYear()} Jack5</p>
 			</footer>
 			<script>
-				const navButton = document.getElementById('top-button-navigation');
-				const navPanel = document.getElementById('panel-navigation');
-				const prefButton = document.getElementById('top-button-preferences');
-				const prefPanel = document.getElementById('panel-preferences');
-				navButton!.addEventListener('click', () => {
-					if (navPanel!.style.width === '') {
-						const navPanelContent = navPanel!.getElementsByClassName('panel-content')[0];
-						navPanel!.style.width = navPanelContent.computedStyleMap().get('width')!.toString();
+				const navButton = document.getElementById("top-button-navigation");
+				const navPanel = document.getElementById("panel-navigation");
+				const prefButton = document.getElementById("top-button-preferences");
+				const prefPanel = document.getElementById("panel-preferences");
+				navButton!.addEventListener("click", () => {
+					if (navPanel!.style.width === "") {
+						const navPanelContent =
+							navPanel!.getElementsByClassName("panel-content")[0];
+						navPanel!.style.width = navPanelContent
+							.computedStyleMap()
+							.get("width")!
+							.toString();
 					} else {
-						navPanel!.style.width = '';
+						navPanel!.style.width = "";
 					}
-					prefPanel!.style.width = '';
-				})
-				prefButton!.addEventListener('click', () => {
-					if (prefPanel!.style.width === '') {
-						const prefPanelContent = prefPanel!.getElementsByClassName('panel-content')[0];
-						prefPanel!.style.width = prefPanelContent.computedStyleMap().get('width')!.toString();
+					prefPanel!.style.width = "";
+				});
+				prefButton!.addEventListener("click", () => {
+					if (prefPanel!.style.width === "") {
+						const prefPanelContent =
+							prefPanel!.getElementsByClassName("panel-content")[0];
+						prefPanel!.style.width = prefPanelContent
+							.computedStyleMap()
+							.get("width")!
+							.toString();
 					} else {
-						prefPanel!.style.width = '';
+						prefPanel!.style.width = "";
 					}
-					navPanel!.style.width = '';
-				})
+					navPanel!.style.width = "";
+				});
 			</script>
 		</div>
 	</body>
@@ -188,22 +204,22 @@ const htmlTitle: string = title + ' | JACK5';
 		/**
 		 * Load the user's preferences from their browser cookies and apply them to the page.
 		 */
-		const body = document.querySelector('body');
-		const mode = localStorage.getItem('mode');
-		if (mode === 'dark') {
-			body!.classList.add('mode-dark');
+		const body = document.querySelector("body");
+		const mode = localStorage.getItem("mode");
+		if (mode === "dark") {
+			body!.classList.add("mode-dark");
 		}
-		const skin = localStorage.getItem('skin');
+		const skin = localStorage.getItem("skin");
 		if (skin !== null) {
-			body!.classList.add('skin-' + skin);
+			body!.classList.add("skin-" + skin);
 		}
-		const position = localStorage.getItem('position');
+		const position = localStorage.getItem("position");
 		if (position !== null) {
-			body!.classList.add('position-' + position);
+			body!.classList.add("position-" + position);
 		}
-		const size = localStorage.getItem('size');
+		const size = localStorage.getItem("size");
 		if (size !== null) {
-			body!.classList.add('size-' + size);
+			body!.classList.add("size-" + size);
 		}
 	</script>
 </html>
