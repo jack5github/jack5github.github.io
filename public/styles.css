@@ -179,7 +179,12 @@ td {
 	padding: 6px;
 	text-align: left;
 }
-.faded {
+span.highlighted {
+	background-color: var(--colour-accent-bg);
+	color: var(--colour-accent-text);
+	padding: 0px 2px 0px 2px;
+}
+span.faded {
 	opacity: 0.35;
 }
 :is(th, td) > :is(ul, ol) {
