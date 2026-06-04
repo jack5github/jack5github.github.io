@@ -180,7 +180,7 @@ td {
 	padding: 6px;
 	text-align: left;
 }
-span.highlighted {
+mark {
 	background-color: var(--colour-accent-bg);
 	color: var(--colour-accent-text);
 	padding: 0px 2px 0px 2px;

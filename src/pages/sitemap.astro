@@ -1,0 +1,27 @@
+---
+import Content from "../components/content.astro";
+import Html from "../components/html.astro";
+
+const pages = import.meta.glob("./**/*.{astro,md,mdx}");
+const urlPaths: string[] = Object.keys(pages);
+const safeUrlPaths: string[] = ['/'];
+for (let i = 0; i < urlPaths.length; i++) {
+	if (urlPaths[i] === "./404.astro") continue;
+	safeUrlPaths.push(urlPaths[i].replace("./", "").split(".")[0]);
+}
+---
+
+<Html title="Sitemap">
+	<Content indexInSearch={false}>
+		<h1 data-pagefind-meta="title">Sitemap</h1>
+		<ul>
+			{
+				safeUrlPaths.map((safeUrlPath) => (
+					<li>
+						<a href={safeUrlPath}>{safeUrlPath}</a>
+					</li>
+				))
+			}
+		</ul>
+	</Content>
+</Html>

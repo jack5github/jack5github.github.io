@@ -3,6 +3,9 @@ layout: ../components/article.astro
 title: interp'd Reality
 author: Jack5
 hero: /images/heroes/ir.webp
+link:
+  text: YouTube channel
+  url: https://www.youtube.com/@interpdReality
 ---
 <!-- TODO: Write this article -->
 ## Characters

@@ -3,6 +3,9 @@
 		"editor.formatOnSave": false
 	},
 	"markdown.extension.tableFormatter.enabled": false,
+	"[mdx]": {
+		"editor.formatOnSave": false
+	},
 	"[svg]": {
 		"editor.formatOnSave": false
 	}
