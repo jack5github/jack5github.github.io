@@ -26,4 +26,4 @@ The eACCESS framework (demonstrated in [this YouTube video](https://youtu.be/WtK
   - Notes that document external resources, such as games, hardware and software, people, recipes, websites and more, featuring tutorial-like information similar to the contents of this website.
 - `5 - Assets` a.k.a. **Extras**
   - Files that are not notes, such as images, audio and video files.
-- <span class="faded">The <b>Spaces</b> category is not represented in this structure, as the vault itself is a space.</span>
+- ;;The <b>Spaces</b> category is not represented in this structure, as the vault itself is a space.;;
