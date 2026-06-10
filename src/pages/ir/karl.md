@@ -18,7 +18,7 @@ Karl has the uncanny ability to mould his character in any situation to portray 
 | Hair | Black |
 | Skin | Fair |
 | Eyes | Blue |
-| Age | 18 <span class="faded">(35 pre-Critical Crash)</span> |
+| Age | 18 ;;(35 pre-iR);; |
 | Height/Weight | Slightly shorter/lighter than average |
 | Gender | Male |
 | Languages | <ul><li>English</li><li>Sign language</li><li>Russian (Draconic)</li><li>Druidic</li><li>Latin (Thieves' Cant)</li></ul> |

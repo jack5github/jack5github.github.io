@@ -16,12 +16,12 @@ He had a close albeit strained relationship with [Gary B. Gone](/ir/gary), whom 
 | Statistic | Value |
 | - | - |
 | Alignment | True Neutral |
-| Faith | [Misotheism](https://en.wikipedia.org/wiki/Misotheism) <span class="faded">(Agnosticism pre-iR)</span> |
+| Faith | [Misotheism](https://en.wikipedia.org/wiki/Misotheism) ;;(Agnosticism pre-iR);; |
 | Lifestyle | Comfortable |
 | Hair | Black |
 | Skin | Brown |
 | Eyes | Green |
-| Age | 18 <span class="faded">(used to be 14)</span> |
+| Age | 18 ;;(used to be 14);; |
 | Height/Weight | Tallest/Heaviest out of his group |
 | Gender | Male |
 | Languages | <ul><li>English</li><li>Russian (Draconic)</li><li>Giant</li><li>Goblin</li></ul> |

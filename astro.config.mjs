@@ -21,6 +21,7 @@ export default defineConfig({
 				() =>
 					remarkReplaceDelimited({
 						beginDelimiter: ';;',
+						includeHtmlContent: true,
 						beginReplacement: '<span class="faded">',
 						endReplacement: '</span>',
 					}),
