@@ -7,6 +7,9 @@
 		"noImplicitAny": false,
 		// Vite compiler options: https://vite.dev/guide/features#typescript-compiler-options
 		"isolatedModules": true,
-		"types": ["vite/client"]
+		"types": ["vite/client"],
+		// Fix import errors
+		"module": "nodenext",
+		"moduleResolution": "nodenext"
 	}
 }
